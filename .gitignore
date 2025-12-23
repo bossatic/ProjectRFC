@@ -1,0 +1,59 @@
+# Build artifacts
+target/
+dist/
+build/
+*.jar
+*.war
+*.ear
+*.class
+
+# IDE
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.vscode/
+
+# Dependencies
+.m2/
+.gradle/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+.testrun
+coverage/
+jacoco.xml
+
+# Maven
+.m2/
+dependency-reduced-pom.xml
+
+# Temp files
+*.backup
+*.bak
+temp/
+tmp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Spring Boot
+application-local.properties

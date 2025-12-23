@@ -1,0 +1,17 @@
+{
+  "format": "1.0",
+  "functions": [
+    {
+      "name": "IDOC_INBOUND_ASYNCHRONOUS",
+      "parameters": [
+        {
+          "name": "IDOC_DATA",
+          "direction": "IMPORT",
+          "abapType": "C",
+          "nucLength": 65535,
+          "ucLength": 65535
+        }
+      ]
+    }
+  ]
+}

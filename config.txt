@@ -1,0 +1,106 @@
+# -------------------------------------------------------------------------
+# Feature section
+# -------------------------------------------------------------------------
+# Enables the IDOC feature by registering a server function for receiving IDOCs from SAP
+# and starting a task for publishing IDOCs to JMS (ActiveMQ)
+feature.idoc.enabled=true
+
+# Whether the receiver should be transactional
+#feature.idoc.transactional=true
+
+# In transactional mode:
+# Timeout in milliseconds, used on waiting for the IDOC package to get
+# processed (commit or rollback is called). If it is not processed within
+# this time, the IDOC transaction is automatically aborted
+#
+#feature.idoc.transactionAbortTimeout=60000
+
+# Replaces the IDOC receiver with a mock, which produces an IDOC package every 5 seconds
+# is not used for SAP Server
+#feature.idoc.mock.enabled=true
+
+
+# Enables the BW source system feature by registering a server function for receiving data requests from SAP BW
+# and starting a task for publishing data requests to JMS (ActiveMQ)
+#feature.bw_source_system.enabled=true
+
+# Replaces the BW source system with a mock, which produces a BW data request every 5 seconds
+# is not used for SAP Server
+#feature.bw_source_system.mock.enabled=true
+
+
+# Enables the streaming feature by registering a server function for receiving data streams from SAP
+# Please note: This features requires a remotely available Kafka cluster
+#feature.streaming.enabled=true
+
+# Timeout to wait for a stream to be started by the SAP background job
+#feature.streaming.timeout=30000
+
+# Maximum number data streams that can be extracted in parallel
+# -1 means unlimited
+#feature.streaming.limit.parallel=3
+
+# Default number of threads, used within SAP for the data extraction, if not requested differently
+#feature.streaming.threadCount=2
+
+# Default Kafka topic partition count, if not requested differently
+#feature.streaming.topic.partitionCount=2
+
+# Default Kafka topic replication factor
+#feature.streaming.topic.replicationFactor=1
+
+# -------------------------------------------------------------------------
+# SAP JCO Server Section
+# -------------------------------------------------------------------------
+# SAP gateway host on which the RFC server should be registered, this parameter is mandatory
+jco.server.gwhost=saphq1ap1.nupco.com
+
+# SAP gateway service, i.e. the port used for the registration, this parameter is mandatory
+jco.server.gwserv=sapgw20
+
+# The program ID with which the registration is done. Serves as identifier for IDOC
+# on the gateway and as the destination in the SAP system
+jco.server.progid=TALEND
+
+# Number of connections that should be registered at the gateway
+jco.server.connection_count=4
+
+#
+# The number of threads that can be used by the JCoServer instance
+# By default, same as connection count
+#
+#jco.server.worker_thread_count=
+
+# The number of threads, always kept running by JCoServer instance
+# By default, same as connection count
+#
+#jco.server.worker_thread_min_count=
+
+# Enable/disable RFC trace (1=on or 0=off)
+#jco.server.trace=0
+
+# If the name of the RFC destination differs from its program ID (jco.server.progid)
+# enable this property to set the name of the RFC destination
+#destination_name=TALEND
+
+
+# -------------------------------------------------------------------------
+# SAP JCO Client Section
+# -------------------------------------------------------------------------
+# Host name of the SAP ABAP application server
+jco.client.ashost=saphq1ap1.nupco.com
+
+# SAP client e.g. "000"
+jco.client.client=100
+
+# Logon language, if not defined the default user language will be used
+jco.client.lang=en
+
+# Logon user - Authenticates this server to SAP
+jco.client.user=RFCTLDHQ1100
+
+# Logon password - Authenticates this server to SAP
+jco.client.passwd=8YX1q2UQ6XFjE0SdEcf8iUVOQ1JZUFRFRDo=
+
+# System number of the SAP ABAP application server
+jco.client.sysnr=20

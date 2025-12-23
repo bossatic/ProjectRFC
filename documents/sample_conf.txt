@@ -1,0 +1,55 @@
+
+# -------------------------------------------------------------------------
+# SAP JCO Server Section
+# -------------------------------------------------------------------------
+# SAP gateway host on which the RFC server should be registered, this parameter is mandatory
+jco.server.gwhost=saphd1ap1.nupco.com
+
+# SAP gateway service, i.e. the port used for the registration, this parameter is mandatory
+jco.server.gwserv=sapgw10
+
+# The program ID with which the registration is done. Serves as identifier for IDOC
+# on the gateway and as the destination in the SAP system
+jco.server.progid=TALEND
+
+# Number of connections that should be registered at the gateway
+jco.server.connection_count=4
+
+# The number of threads that can be used by the JCoServer instance
+# By default, same as connection count
+#
+#jco.server.worker_thread_count=
+
+# The number of threads, always kept running by JCoServer instance
+# By default, same as connection count
+#
+#jco.server.worker_thread_min_count=
+
+# Enable/disable RFC trace (1=on or 0=off)
+#jco.server.trace=0
+
+# If the name of the RFC destination differs from its program ID (jco.server.progid)
+# enable this property to set the name of the RFC destination
+#destination_name=TALEND
+
+
+# -------------------------------------------------------------------------
+# SAP JCO Client Section
+# -------------------------------------------------------------------------
+# Host name of the SAP ABAP application server
+jco.client.ashost=sapqa.company.com
+
+# SAP client e.g. "000"
+jco.client.client=100
+
+# Logon language, if not defined the default user language will be used
+jco.client.lang=en
+
+# Logon user - Authenticates this server to SAP
+jco.client.user=USERNAME
+
+# Logon password - Authenticates this server to SAP
+jco.client.passwd=8YX1q2UQ6XFjE0SdEcf8iUVOQ1JZUFRFRDo=
+
+# System number of the SAP ABAP application server
+jco.client.sysnr=10
