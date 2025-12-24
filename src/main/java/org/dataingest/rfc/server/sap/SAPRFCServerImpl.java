@@ -1,14 +1,19 @@
 package org.dataingest.rfc.server.sap;
 
 import com.sap.conn.jco.server.JCoServer;
-import com.sap.conn.jco.server.JCoServerFactory;
 import com.sap.conn.jco.server.JCoServerErrorListener;
 import com.sap.conn.jco.server.JCoServerExceptionListener;
 import com.sap.conn.jco.server.JCoServerContext;
 import com.sap.conn.jco.server.JCoServerContextInfo;
-import com.sap.conn.jco.server.DefaultServerHandlerFactory;
 import com.sap.conn.jco.JCoRepository;
 import com.sap.conn.jco.JCoFunctionTemplate;
+// SAP IDoc API imports
+import com.sap.conn.idoc.jco.JCoIDoc;
+import com.sap.conn.idoc.jco.JCoIDocServer;
+import com.sap.conn.idoc.jco.JCoIDocHandler;
+import com.sap.conn.idoc.jco.JCoIDocHandlerFactory;
+import com.sap.conn.idoc.jco.JCoIDocServerContext;
+import com.sap.conn.idoc.IDocDocumentList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,20 +47,24 @@ public class SAPRFCServerImpl {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SAPRFCServerImpl.class);
 
-    @Autowired
-    private IDocKafkaPublisher idocPublisher;
+    // NOT USED - Commenting out to simplify
+    // @Autowired
+    // private IDocKafkaPublisher idocPublisher;
 
-    @Autowired
-    private org.dataingest.rfc.server.idoc.UnifiedIDOCReceiver unifiedIDOCReceiver;
+    // NOT USED - Commenting out to simplify
+    // @Autowired
+    // private org.dataingest.rfc.server.idoc.UnifiedIDOCReceiver unifiedIDOCReceiver;
 
     @Autowired
     private IDOCServerTIDHandler tidHandler;
 
-    @Autowired
-    private RFCFunctionCallListener rfcFunctionCallListener;
+    // NOT USED - Commenting out to simplify
+    // @Autowired
+    // private RFCFunctionCallListener rfcFunctionCallListener;
 
-    @Autowired(required = false)
-    private SAPEnvironmentInitializer sapEnvironmentInitializer;
+    // NOT USED - Commenting out to simplify
+    // @Autowired(required = false)
+    // private SAPEnvironmentInitializer sapEnvironmentInitializer;
 
     // RFC Server Configuration
     @Value("${jco.server.enabled:false}")
@@ -85,29 +94,23 @@ public class SAPRFCServerImpl {
     @Value("${jco.server.trace:0}")
     private int trace;
 
-    // RFC Client Configuration (for server authentication to SAP if needed)
-    @Value("${jco.client.ashost:localhost}")
-    private String ashost;
+    // NOT USED - Client config not needed for simple IDoc receive
+    // @Value("${jco.client.ashost:localhost}")
+    // private String ashost;
+    // @Value("${jco.client.client:100}")
+    // private String client;
+    // @Value("${jco.client.lang:en}")
+    // private String lang;
+    // @Value("${jco.client.user:rfc_user}")
+    // private String user;
+    // @Value("${jco.client.passwd:}")
+    // private String passwd;
+    // @Value("${jco.client.sysnr:00}")
+    // private String sysnr;
+    // @Value("${jco.client.trace:0}")
+    // private int clientTrace;
 
-    @Value("${jco.client.client:100}")
-    private String client;
-
-    @Value("${jco.client.lang:en}")
-    private String lang;
-
-    @Value("${jco.client.user:rfc_user}")
-    private String user;
-
-    @Value("${jco.client.passwd:}")
-    private String passwd;
-
-    @Value("${jco.client.sysnr:00}")
-    private String sysnr;
-
-    @Value("${jco.client.trace:0}")
-    private int clientTrace;
-
-    private JCoServer rfcServer;
+    private JCoIDocServer rfcServer;  // Changed from JCoServer to JCoIDocServer
     private boolean serverStarted = false;
 
     /**
@@ -151,127 +154,32 @@ public class SAPRFCServerImpl {
      */
     private void startRFCServer() throws Exception {
         LOGGER.info("Starting SAP RFC Server with Program ID: {}", progid);
-
-        LOGGER.debug("RFC Server Configuration:");
         LOGGER.debug("  Gateway Host: {}", gwhost);
         LOGGER.debug("  Gateway Service: {}", gwserv);
-        LOGGER.debug("  Program ID: {}", progid);
         LOGGER.debug("  Connection Count: {}", connectionCount);
 
         try {
-            // Get RFC Server instance from factory
-            // The ServerDataProvider (registered in SAPEnvironmentInitializer)
-            // will supply the configuration for this server name
-            rfcServer = JCoServerFactory.getServer(progid);
-            LOGGER.info("RFC Server instance obtained for Program ID: {}", progid);
-
-            // Register error listener to capture SAP JCo errors
-            rfcServer.addServerErrorListener((JCoServerErrorListener) (server, msg, info, error) -> {
-                System.err.println("!!!!! SERVER ERROR LISTENER CALLED !!!!!");
-                LOGGER.error("=== SAP JCo SERVER ERROR DETECTED ===");
-                LOGGER.error("Message: {}", msg);
-                LOGGER.error("Error: {}", error);
-                LOGGER.error("Stack Trace: ", error);
-            });
-            LOGGER.info("Server error listener registered");
-
-            // Register exception listener to capture SAP JCo exceptions
-            rfcServer.addServerExceptionListener((JCoServerExceptionListener) (server, msg, info, exception) -> {
-                System.err.println("!!!!! SERVER EXCEPTION LISTENER CALLED !!!!!");
-                LOGGER.error("=== SAP JCo SERVER EXCEPTION DETECTED ===");
-                LOGGER.error("Message: {}", msg);
-                LOGGER.error("Exception: {}", exception.getMessage());
-                LOGGER.error("Stack Trace: ", exception);
-            });
-            LOGGER.info("Server exception listener registered");
-
-            // Verify repository is loaded
-            try {
-                LOGGER.error("=== VERIFYING REPOSITORY AND FUNCTIONS ===");
-
-                JCoRepository repo = rfcServer.getRepository();
-                if (repo != null) {
-                    LOGGER.error("✓ Repository obtained from server");
-                    try {
-                        JCoFunctionTemplate fnTemplate = repo.getFunctionTemplate("IDOC_INBOUND_ASYNCHRONOUS");
-                        if (fnTemplate != null) {
-                            LOGGER.error("✓ IDOC_INBOUND_ASYNCHRONOUS function found in repository!");
-                            LOGGER.error("  Function Name: {}", fnTemplate.getName());
-                            LOGGER.error("  Import parameters: {}", fnTemplate.getImportParameterList() != null ? fnTemplate.getImportParameterList().getFieldCount() : 0);
-                        } else {
-                            LOGGER.error("✗ IDOC_INBOUND_ASYNCHRONOUS function NOT found in repository!");
-                        }
-                    } catch (Exception e) {
-                        LOGGER.error("✗ Error accessing function: {}", e.getMessage(), e);
-                    }
-                } else {
-                    LOGGER.error("✗ Repository is NULL!");
-                }
-            } catch (Exception e) {
-                LOGGER.error("✗ Error verifying repository: {}", e.getMessage(), e);
-            }
-
-            // CORRECT APPROACH: Use RFCFunctionCallListener to intercept function calls
-            // This listener explicitly calls the UnifiedIDOCReceiver's handleRequest method
-            if (rfcFunctionCallListener == null) {
-                LOGGER.error("!!!!! ERROR: rfcFunctionCallListener is NULL - Spring failed to autowire it !!!!!");
-                throw new RuntimeException("RFCFunctionCallListener not autowired");
-            }
-
-            try {
-                // Create a FunctionHandlerFactory (correct API usage)
-                DefaultServerHandlerFactory.FunctionHandlerFactory functionHandlerFactory =
-                    new DefaultServerHandlerFactory.FunctionHandlerFactory();
-
-                System.err.println("!!!!! FunctionHandlerFactory created successfully");
-
-                // Register RFCFunctionCallListener for IDOC_INBOUND_ASYNCHRONOUS function
-                // This listener will explicitly call UnifiedIDOCReceiver.handleRequest()
-                functionHandlerFactory.registerHandler("IDOC_INBOUND_ASYNCHRONOUS", rfcFunctionCallListener);
-                System.err.println("!!!!! RFCFunctionCallListener registered for IDOC_INBOUND_ASYNCHRONOUS");
-                LOGGER.error("!!!!! RFCFunctionCallListener registered for IDOC_INBOUND_ASYNCHRONOUS");
-
-                // CRITICAL: Also register as GENERIC handler to catch ANY function that doesn't match
-                // This will help us discover what function name SAP is actually calling
-                functionHandlerFactory.registerGenericHandler(rfcFunctionCallListener);
-                System.err.println("!!!!! RFCFunctionCallListener registered as generic handler (fallback)");
-                LOGGER.error("!!!!! RFCFunctionCallListener registered as generic handler (fallback)");
-
-                // Set the factory on the server
-                rfcServer.setCallHandlerFactory(functionHandlerFactory);
-                System.err.println("!!!!! FunctionHandlerFactory set on RFC Server");
-                LOGGER.error("!!!!! FunctionHandlerFactory set on RFC Server");
-
-            } catch (Exception e) {
-                System.err.println("!!!!! ERROR registering handler: " + e.getMessage());
-                e.printStackTrace();
-                LOGGER.error("!!!!! ERROR registering handler: {}", e.getMessage(), e);
-                throw e;
-            }
-
-            LOGGER.error("!!!!! RFC FUNCTION CALL LISTENER REGISTERED !!!!!!!");
-            System.err.println("!!!!! RFC FUNCTION CALL LISTENER REGISTERED !!!!!!!");
-
-            // Register the TID handler AFTER setting CallHandlerFactory (matching Talend's order)
+            // EXACTLY like SAP's IDocServerExample.java
+            rfcServer = JCoIDoc.getServer(progid);
+            rfcServer.setIDocHandlerFactory(new MyIDocHandlerFactory());
             rfcServer.setTIDHandler(tidHandler);
-            LOGGER.info("TID handler registered with RFC Server");
-
-            // Start the server listening on SAP Gateway
+            rfcServer.addServerErrorListener((JCoServerErrorListener) (server, msg, info, error) -> {
+                LOGGER.error("SAP JCo SERVER ERROR: {}", msg, error);
+            });
+            rfcServer.addServerExceptionListener((JCoServerExceptionListener) (server, msg, info, exception) -> {
+                LOGGER.error("SAP JCo SERVER EXCEPTION: {}", msg, exception);
+            });
             rfcServer.start();
             serverStarted = true;
-            LOGGER.info("RFC Server started and listening on gateway: {}:{}", gwhost, gwserv);
 
             LOGGER.info("================================================");
-            LOGGER.info("SAP RFC Server Configuration Ready:");
+            LOGGER.info("SAP RFC Server STARTED - Pattern: SAP IDocServerExample");
             LOGGER.info("  Program ID: {}", progid);
             LOGGER.info("  Gateway: {}:{}", gwhost, gwserv);
-            LOGGER.info("  Unified Receiver: {}", unifiedIDOCReceiver.getClass().getSimpleName());
-            LOGGER.info("  Status: Listening for RFC calls from SAP");
             LOGGER.info("================================================");
-            LOGGER.info("IDOCs will be published to Kafka topics");
 
         } catch (Exception e) {
-            LOGGER.error("Failed to initialize RFC Server: {}", e.getMessage(), e);
+            LOGGER.error("Failed to start RFC Server: {}", e.getMessage(), e);
             serverStarted = false;
             throw new Exception("RFC Server initialization failed: " + e.getMessage(), e);
         }
@@ -368,5 +276,60 @@ public class SAPRFCServerImpl {
      */
     public boolean isRunning() {
         return enabled && serverStarted && rfcServer != null;
+    }
+
+    // ========================================================================
+    // Inner classes - following SAP IDocServerExample pattern exactly
+    // ========================================================================
+
+    /**
+     * IDoc Handler Factory - exactly like SAP's MyIDocHandlerFactory
+     */
+    class MyIDocHandlerFactory implements JCoIDocHandlerFactory {
+        private JCoIDocHandler handler = new MyIDocReceiveHandler();
+
+        @Override
+        public JCoIDocHandler getIDocHandler(JCoIDocServerContext serverCtx) {
+            System.err.println("!!!!! MyIDocHandlerFactory.getIDocHandler() CALLED !!!!!");
+            LOGGER.error("!!!!! MyIDocHandlerFactory.getIDocHandler() CALLED !!!!!");
+            LOGGER.error("!!!!! Returning handler: {}", handler.getClass().getName());
+            return handler;
+        }
+    }
+
+    /**
+     * IDoc Receive Handler - EXACTLY like SAP's MyIDocReceiveHandler
+     */
+    class MyIDocReceiveHandler implements JCoIDocHandler {
+        @Override
+        public void handleRequest(JCoServerContext serverCtx, IDocDocumentList idocList) {
+            System.err.println("!!!!! IDoc Handler Called!");
+            LOGGER.error("!!!!! IDoc Handler Called!");
+            LOGGER.error("!!!!! TID: {}", serverCtx.getTID());
+            LOGGER.error("!!!!! IDoc Count: {}", idocList.getNumDocuments());
+
+            // EXACTLY like SAP example - save to XML file
+            java.io.FileOutputStream fos = null;
+            java.io.OutputStreamWriter osw = null;
+            try {
+                com.sap.conn.idoc.IDocXMLProcessor xmlProcessor = JCoIDoc.getIDocFactory().getIDocXMLProcessor();
+                String filename = serverCtx.getTID() + "_idoc.xml";
+                fos = new java.io.FileOutputStream(filename);
+                osw = new java.io.OutputStreamWriter(fos, "UTF8");
+                xmlProcessor.render(idocList, osw, com.sap.conn.idoc.IDocXMLProcessor.RENDER_WITH_TABS_AND_CRLF);
+                osw.flush();
+                LOGGER.error("!!!!! IDoc saved to: {}", filename);
+                System.err.println("!!!!! IDoc saved to: " + filename);
+            } catch (Exception e) {
+                LOGGER.error("Error saving IDoc: {}", e.getMessage(), e);
+            } finally {
+                try {
+                    if (osw != null) osw.close();
+                    if (fos != null) fos.close();
+                } catch (Exception e) {
+                    LOGGER.error("Error closing file: {}", e.getMessage());
+                }
+            }
+        }
     }
 }

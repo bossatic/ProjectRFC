@@ -4,6 +4,10 @@ import com.sap.conn.jco.*;
 import com.sap.conn.jco.server.JCoServerContext;
 import com.sap.conn.jco.server.JCoServerFunctionHandler;
 import com.sap.conn.jco.server.JCoServerFunctionHandlerFactory;
+// SAP IDoc API imports
+import com.sap.conn.idoc.IDocDocument;
+import com.sap.conn.idoc.IDocDocumentList;
+import com.sap.conn.idoc.IDocSegment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -188,6 +192,171 @@ public class UnifiedIDOCReceiver implements JCoServerFunctionHandler, JCoServerF
             }
 
             throw new AbapException("IDOC_PROCESSING_ERROR", e.getMessage());
+        }
+    }
+
+    /**
+     * NEW METHOD: Handles IDoc data using the SAP IDoc API (JCoIDocHandler interface).
+     * This method is called by the JCoIDocHandler when IDocs are received via tRFC.
+     *
+     * @param serverCtx SAP server context with transaction and sender information
+     * @param idocList IDocDocumentList containing the IDoc documents from SAP
+     */
+    public void handleIDocRequest(JCoServerContext serverCtx, IDocDocumentList idocList) {
+        String tid = "UNKNOWN";
+        String senderSystem = "UNKNOWN";
+        String partnerHost = "UNKNOWN";
+
+        System.err.println("═════════════════════════════════════════════════════════════");
+        System.err.println("!!!!! handleIDocRequest() CALLED WITH IDOC API !!!!!!!!!!!!!!!");
+        System.err.println("═════════════════════════════════════════════════════════════");
+
+        try {
+            tid = serverCtx.getTID();
+            senderSystem = serverCtx.getConnectionAttributes().getSystemID();
+            partnerHost = serverCtx.getConnectionAttributes().getPartnerHost();
+
+            int numDocuments = idocList.getNumDocuments();
+
+            System.err.println("TID: " + tid);
+            System.err.println("Sender System: " + senderSystem);
+            System.err.println("Number of IDocs: " + numDocuments);
+
+            LOGGER.info("╔══════════════════════════════════════════════════════════════╗");
+            LOGGER.info("║     UNIFIED IDOC RECEIVER - IDOC API CALL RECEIVED           ║");
+            LOGGER.info("╚══════════════════════════════════════════════════════════════╝");
+            LOGGER.info("SAP System: {}", senderSystem);
+            LOGGER.info("Partner Host: {}", partnerHost);
+            LOGGER.info("Transaction ID (TID): {}", tid);
+            LOGGER.info("Number of IDocs: {}", numDocuments);
+            LOGGER.info("Thread: {}", Thread.currentThread().getName());
+            LOGGER.info("Timestamp: {}", System.currentTimeMillis());
+
+            // Extract IDOC data from IDocDocumentList
+            LOGGER.info("→ Extracting IDOC data from IDocDocumentList...");
+            List<SAPIDOCDocument> idocs = extractIdocsFromDocumentList(idocList, senderSystem);
+            LOGGER.info("← IDOC extraction completed. Total IDOCs: {}", idocs.size());
+
+            if (idocs.isEmpty()) {
+                LOGGER.warn("⚠️  NO IDOC DATA FOUND in IDocDocumentList");
+                return;
+            }
+
+            // Publish each IDOC to Kafka
+            LOGGER.info("→ Publishing {} IDOC(s) to Kafka...", idocs.size());
+            for (SAPIDOCDocument idoc : idocs) {
+                try {
+                    idocPublisher.publishSAPDocument(idoc);
+                    LOGGER.info("  ✓ Published IDOC: {}", idoc.getMessageType());
+                } catch (Exception e) {
+                    LOGGER.error("  ✗ Failed to publish IDOC: {}", e.getMessage(), e);
+                    throw e;
+                }
+            }
+            LOGGER.info("← All IDOCs published to Kafka successfully");
+
+        } catch (Exception e) {
+            LOGGER.error("╔══════════════════════════════════════════════════════════════╗");
+            LOGGER.error("║            ERROR HANDLING IDOC REQUEST                       ║");
+            LOGGER.error("╚══════════════════════════════════════════════════════════════╝");
+            LOGGER.error("TID: {}", tid);
+            LOGGER.error("Error: {}", e.getMessage(), e);
+            throw new RuntimeException("IDOC processing error: " + e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Extracts IDOC documents from IDocDocumentList (SAP IDoc API).
+     *
+     * @param idocList the IDocDocumentList containing IDoc documents
+     * @param senderSystem the SAP system ID
+     * @return list of extracted IDOC documents
+     */
+    private List<SAPIDOCDocument> extractIdocsFromDocumentList(IDocDocumentList idocList, String senderSystem) {
+        List<SAPIDOCDocument> idocs = new ArrayList<>();
+
+        try {
+            int numDocuments = idocList.getNumDocuments();
+            LOGGER.info("Processing {} IDoc document(s)", numDocuments);
+
+            for (int i = 0; i < numDocuments; i++) {
+                try {
+                    IDocDocument idoc = idocList.get(i);  // Use get() instead of getDocument()
+
+                    // Extract IDoc metadata
+                    String idocNumber = idoc.getIDocNumber();
+                    String messageType = idoc.getIDocType();
+
+                    LOGGER.info("Processing IDoc {}: Number={}, Type={}", i + 1, idocNumber, messageType);
+
+                    // Create SAPIDOCDocument
+                    SAPIDOCDocument sapIdoc = new SAPIDOCDocument();
+                    sapIdoc.setDocumentNumber(idocNumber);  // Use setDocumentNumber()
+                    sapIdoc.setMessageType(messageType);
+                    sapIdoc.setSenderSystem(senderSystem);
+                    sapIdoc.setTimestamp(System.currentTimeMillis());
+
+                    // Extract all segment data as strings
+                    List<String> segments = new ArrayList<>();
+                    extractSegmentDataToList(idoc.getRootSegment(), segments, 0);
+                    sapIdoc.setSegmentData(segments);  // Use setSegmentData()
+
+                    idocs.add(sapIdoc);
+                    LOGGER.info("  ✓ IDoc extracted: {} segments", segments.size());
+
+                } catch (Exception e) {
+                    LOGGER.error("  ✗ Error extracting IDoc {}: {}", i + 1, e.getMessage(), e);
+                }
+            }
+
+        } catch (Exception e) {
+            LOGGER.error("Error processing IDocDocumentList: {}", e.getMessage(), e);
+        }
+
+        return idocs;
+    }
+
+    /**
+     * Recursively extracts data from IDoc segments into a List of strings.
+     *
+     * @param segment the IDoc segment to extract data from
+     * @param segments the list to store extracted segment data
+     * @param level the nesting level (for indentation)
+     */
+    private void extractSegmentDataToList(IDocSegment segment, List<String> segments, int level) {
+        if (segment == null) {
+            return;
+        }
+
+        try {
+            String segmentType = segment.getType();
+            String indent = "  ".repeat(level);
+
+            // Add segment header with full record data
+            segments.add(indent + "SEGMENT: " + segmentType);
+
+            // Extract the segment as string (contains all field data)
+            try {
+                String segmentData = segment.toString();
+                if (segmentData != null && !segmentData.trim().isEmpty()) {
+                    segments.add(indent + "  DATA: " + segmentData);
+                }
+            } catch (Exception e) {
+                LOGGER.debug("Could not convert segment to string: {}", e.getMessage());
+            }
+
+            // Process child segments recursively
+            for (int i = 0; i < segment.getNumChildren(); i++) {
+                try {
+                    IDocSegment childSegment = segment.getChild(i);
+                    extractSegmentDataToList(childSegment, segments, level + 1);
+                } catch (Exception e) {
+                    LOGGER.debug("Error processing child segment {}: {}", i, e.getMessage());
+                }
+            }
+
+        } catch (Exception e) {
+            LOGGER.error("Error extracting segment data: {}", e.getMessage(), e);
         }
     }
 

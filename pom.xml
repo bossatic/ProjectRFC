@@ -90,18 +90,18 @@
             <artifactId>sapjco</artifactId>
             <version>3.0</version>
             <scope>system</scope>
-            <systemPath>D:/RFC_SERVER/ProjectRFC/sapjco3.jar</systemPath>
+            <systemPath>D:\SapRFC\ProjectRFC\sapjco3.jar</systemPath>
         </dependency>
 
-        <!-- 
+        <!-- SAP IDOC Library 3.0 -->
         <dependency>
             <groupId>com.sap.idoc</groupId>
             <artifactId>sapidoc</artifactId>
             <version>3.0</version>
             <scope>system</scope>
-            <systemPath>D:\RFC_SERVER\ProjectRFC/../SapLibs/SapIDOC/sapidoc3.jar</systemPath>
+            <systemPath>D:\SapRFC\ProjectRFC\sapidoc3.jar</systemPath>
         </dependency>
-SAP IDOC Library 3.0 -->
+
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

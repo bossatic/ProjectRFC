@@ -49,6 +49,9 @@ public class SAPServerDataProvider implements ServerDataProvider {
     @Value("${jco.server.repository_file:}")
     private String repositoryFile;
 
+    @Value("${jco.server.repository_destination:SAP_CLIENT}")
+    private String repositoryDestination;
+
     // RFC Client Configuration (for server authentication to SAP)
     @Value("${jco.client.ashost:localhost}")
     private String ashost;
@@ -108,14 +111,19 @@ public class SAPServerDataProvider implements ServerDataProvider {
         // Trace Settings
         props.setProperty("jco.server.trace", String.valueOf(trace));
 
-        // Repository Configuration - REQUIRED by SAP JCo
-        // Use file-based repository (minimal/empty) to avoid authentication issues
+        // Repository Configuration - REQUIRED by SAP IDoc Server
+        // IDoc servers need a client destination to access IDoc repository
+        if (repositoryDestination != null && !repositoryDestination.isEmpty()) {
+            props.setProperty("jco.server.repository_destination", repositoryDestination);
+        }
+
+        // Optional: file-based repository for regular RFC functions
         if (repositoryFile != null && !repositoryFile.isEmpty()) {
             props.setProperty("jco.server.repository_file", repositoryFile);
         }
 
-        LOGGER.debug("Server properties for {}: gwhost={}, gwserv={}, connection_count={}, repository_file={}",
-                     serverName, gwhost, gwserv, connectionCount, repositoryFile);
+        LOGGER.debug("Server properties for {}: gwhost={}, gwserv={}, connection_count={}, repository_destination={}",
+                     serverName, gwhost, gwserv, connectionCount, repositoryDestination);
         return props;
     }
 

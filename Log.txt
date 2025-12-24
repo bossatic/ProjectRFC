@@ -1,247 +1,389 @@
-2025-12-23T22:51:40.517+03:00  INFO 800562 --- [           main] o.t.s.impl.server.SAPServerApplication   : Starting SAPServerApplication using Java 17.0.13 with PID 800562 (/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar started by root in /talend/RFC_DEV)
-2025-12-23T22:51:40.521+03:00 DEBUG 800562 --- [           main] o.s.boot.SpringApplication               : Loading source class org.talend.sap.impl.server.SAPServerApplication
-2025-12-23T22:51:40.675+03:00 TRACE 800562 --- [           main] o.s.b.c.config.ConfigDataEnvironment     : Adding initial config data import from location 'file:./conf/tsap-rfc-server.properties'
-2025-12-23T22:51:40.676+03:00 TRACE 800562 --- [           main] .b.c.c.ConfigDataEnvironmentContributors : Processing imports [file:./conf/tsap-rfc-server.properties]
-2025-12-23T22:51:40.676+03:00 TRACE 800562 --- [           main] o.s.b.context.config.ConfigDataImporter  : Considering resource file [conf/tsap-rfc-server.properties] from location file:./conf/tsap-rfc-server.properties
-2025-12-23T22:51:40.677+03:00 TRACE 800562 --- [           main] o.s.b.context.config.ConfigDataLoaders   : Loading file [conf/tsap-rfc-server.properties] using loader org.springframework.boot.context.config.StandardConfigDataLoader
-2025-12-23T22:51:40.677+03:00 TRACE 800562 --- [           main] o.s.b.context.config.ConfigDataImporter  : Loaded resource file [conf/tsap-rfc-server.properties] from location file:./conf/tsap-rfc-server.properties
-2025-12-23T22:51:40.678+03:00 TRACE 800562 --- [           main] .b.c.c.ConfigDataEnvironmentContributors : Imported 1 resource [file [conf/tsap-rfc-server.properties]]
-2025-12-23T22:51:40.683+03:00 TRACE 800562 --- [           main] .b.c.c.ConfigDataEnvironmentContributors : Processing imports [file:./conf/tsap-rfc-server.properties]
-2025-12-23T22:51:40.683+03:00 TRACE 800562 --- [           main] b.c.c.StandardConfigDataLocationResolver : Skipping missing resource file:./conf/tsap-rfc-server-default.properties
-2025-12-23T22:51:40.683+03:00 TRACE 800562 --- [           main] o.s.b.context.config.ConfigDataImporter  : Considering resource file [conf/tsap-rfc-server.properties] from location file:./conf/tsap-rfc-server.properties
-2025-12-23T22:51:40.683+03:00 TRACE 800562 --- [           main] o.s.b.context.config.ConfigDataImporter  : Already loaded resource file [conf/tsap-rfc-server.properties] ignoring location file:./conf/tsap-rfc-server.properties
-2025-12-23T22:51:40.684+03:00 TRACE 800562 --- [           main] o.s.b.c.config.ConfigDataEnvironment     : Adding imported property source 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:40.831+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved module-path location pattern [org/talend/sap/impl/server/**/*.class] to resources []
-2025-12-23T22:51:40.832+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved module-path location pattern [org/talend/sap/impl/server/] to resources []
-2025-12-23T22:51:40.834+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved class path location [org/talend/sap/impl/server/] to resources [URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/]]
-2025-12-23T22:51:40.835+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Looking for matching resources in jar file [nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/]
-2025-12-23T22:51:40.844+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved location pattern [classpath*:org/talend/sap/impl/server/**/*.class] to resources [URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestNameUtil.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemMock.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverMock.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestPublisher.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaConsumerFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/BadRequestException.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/ServiceUnavailableException.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/NotFoundException.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/SAPStreamController.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocPublisher.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocNameUtil.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerCondition.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerSslContext.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsQueueReconnect.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnect.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerCondition.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnectTask.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/Holder.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationPropertiesEncryption.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsTopicReconnect.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationProperties.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaProducerConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ThreadPoolConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesLoader.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaCondition.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiDSourceIsSupported.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiBwFunctionExists.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionServiceImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPServerApplication.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPStreamReceiverFactoryImpl.class]]
-2025-12-23T22:51:40.845+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminFactoryImpl.class]
-2025-12-23T22:51:40.871+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminFactoryImpl.class]
-2025-12-23T22:51:40.872+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemFactoryImpl.class]
-2025-12-23T22:51:40.874+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemFactoryImpl.class]
-2025-12-23T22:51:40.874+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestNameUtil.class]
-2025-12-23T22:51:40.875+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestNameUtil.class]
-2025-12-23T22:51:40.875+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemMock.class]
-2025-12-23T22:51:40.876+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemMock.class]
-2025-12-23T22:51:40.876+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverMock.class]
-2025-12-23T22:51:40.877+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverMock.class]
-2025-12-23T22:51:40.877+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestPublisher.class]
-2025-12-23T22:51:40.878+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestPublisher.class]
-2025-12-23T22:51:40.878+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaConsumerFactoryImpl.class]
-2025-12-23T22:51:40.881+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaConsumerFactoryImpl.class]
-2025-12-23T22:51:40.882+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/BadRequestException.class]
-2025-12-23T22:51:40.888+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/BadRequestException.class]
-2025-12-23T22:51:40.889+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/ServiceUnavailableException.class]
-2025-12-23T22:51:40.889+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/ServiceUnavailableException.class]
-2025-12-23T22:51:40.889+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/NotFoundException.class]
-2025-12-23T22:51:40.890+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/NotFoundException.class]
-2025-12-23T22:51:40.891+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/SAPStreamController.class]
-2025-12-23T22:51:40.920+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/SAPStreamController.class]
-2025-12-23T22:51:40.921+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocPublisher.class]
-2025-12-23T22:51:40.921+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocPublisher.class]
-2025-12-23T22:51:40.922+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminImpl.class]
-2025-12-23T22:51:40.922+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminImpl.class]
-2025-12-23T22:51:40.922+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocNameUtil.class]
-2025-12-23T22:51:40.922+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocNameUtil.class]
-2025-12-23T22:51:40.922+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerCondition.class]
-2025-12-23T22:51:40.922+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerCondition.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerSslContext.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerSslContext.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsQueueReconnect.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsQueueReconnect.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnect.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnect.class]
-2025-12-23T22:51:40.923+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerCondition.class]
-2025-12-23T22:51:40.924+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerCondition.class]
-2025-12-23T22:51:40.924+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnectTask.class]
-2025-12-23T22:51:40.924+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnectTask.class]
-2025-12-23T22:51:40.924+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/Holder.class]
-2025-12-23T22:51:40.924+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/Holder.class]
-2025-12-23T22:51:40.924+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationPropertiesEncryption.class]
-2025-12-23T22:51:40.925+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationPropertiesEncryption.class]
-2025-12-23T22:51:40.925+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerConfiguration.class]
-2025-12-23T22:51:40.932+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerConfiguration.class]
-2025-12-23T22:51:40.932+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsTopicReconnect.class]
-2025-12-23T22:51:40.932+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsTopicReconnect.class]
-2025-12-23T22:51:40.932+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationProperties.class]
-2025-12-23T22:51:40.933+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationProperties.class]
-2025-12-23T22:51:40.933+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaProducerConfiguration.class]
-2025-12-23T22:51:40.934+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaProducerConfiguration.class]
-2025-12-23T22:51:40.934+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ThreadPoolConfiguration.class]
-2025-12-23T22:51:40.935+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ThreadPoolConfiguration.class]
-2025-12-23T22:51:40.936+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerConfiguration.class]
-2025-12-23T22:51:40.937+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerConfiguration.class]
-2025-12-23T22:51:40.937+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesImpl.class]
-2025-12-23T22:51:40.937+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesImpl.class]
-2025-12-23T22:51:40.937+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesLoader.class]
-2025-12-23T22:51:40.938+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesLoader.class]
-2025-12-23T22:51:40.938+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaCondition.class]
-2025-12-23T22:51:40.938+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaCondition.class]
-2025-12-23T22:51:40.938+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationConfiguration.class]
-2025-12-23T22:51:40.938+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationConfiguration.class]
-2025-12-23T22:51:40.939+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiDSourceIsSupported.class]
-2025-12-23T22:51:40.939+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiDSourceIsSupported.class]
-2025-12-23T22:51:40.939+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiBwFunctionExists.class]
-2025-12-23T22:51:40.939+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiBwFunctionExists.class]
-2025-12-23T22:51:40.939+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverFactoryImpl.class]
-2025-12-23T22:51:40.939+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverFactoryImpl.class]
-2025-12-23T22:51:40.939+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionServiceImpl.class]
-2025-12-23T22:51:40.941+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionServiceImpl.class]
-2025-12-23T22:51:40.941+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionImpl.class]
-2025-12-23T22:51:40.941+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionImpl.class]
-2025-12-23T22:51:40.941+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPServerApplication.class]
-2025-12-23T22:51:40.941+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPServerApplication.class]
-2025-12-23T22:51:40.942+03:00 TRACE 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPStreamReceiverFactoryImpl.class]
-2025-12-23T22:51:40.942+03:00 DEBUG 800562 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPStreamReceiverFactoryImpl.class]
-2025-12-23T22:51:41.581+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.JmsBrokerConfiguration.queueConnection()
-2025-12-23T22:51:41.581+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.JmsBrokerConfiguration.topicConnection()
-2025-12-23T22:51:41.581+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.ApplicationProperties.kafkaConsumerProperties()
-2025-12-23T22:51:41.581+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.ApplicationProperties.kafkaProducerProperties()
-2025-12-23T22:51:41.582+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.ThreadPoolConfiguration.taskExecutor()
-2025-12-23T22:51:41.582+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.named.SAPNamedPropertiesLoader.namedProperties()
-2025-12-23T22:51:41.582+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.ApplicationConfiguration.idocQueue()
-2025-12-23T22:51:41.582+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.ApplicationConfiguration.requestQueue()
-2025-12-23T22:51:41.582+03:00 TRACE 800562 --- [           main] a.ConfigurationClassBeanDefinitionReader : Registering bean definition for @Bean method org.talend.sap.impl.server.configuration.ApplicationConfiguration.streamReceiverService()
-2025-12-23T22:51:41.816+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'spring.info.build.location:classpath:META-INF/build-info.properties' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:42.652+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassEnhancer       : Successfully enhanced org.talend.sap.impl.server.SAPServerApplication; enhanced class name is: org.talend.sap.impl.server.SAPServerApplication$$SpringCGLIB$$0
-2025-12-23T22:51:42.652+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Replacing bean definition 'SAPServerApplication' existing class 'org.talend.sap.impl.server.SAPServerApplication' with enhanced class 'org.talend.sap.impl.server.SAPServerApplication$$SpringCGLIB$$0'
-2025-12-23T22:51:42.676+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassEnhancer       : Successfully enhanced org.talend.sap.impl.server.configuration.JmsBrokerConfiguration; enhanced class name is: org.talend.sap.impl.server.configuration.JmsBrokerConfiguration$$SpringCGLIB$$0
-2025-12-23T22:51:42.676+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Replacing bean definition 'jmsBrokerConfiguration' existing class 'org.talend.sap.impl.server.configuration.JmsBrokerConfiguration' with enhanced class 'org.talend.sap.impl.server.configuration.JmsBrokerConfiguration$$SpringCGLIB$$0'
-2025-12-23T22:51:42.688+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassEnhancer       : Successfully enhanced org.talend.sap.impl.server.configuration.ApplicationProperties; enhanced class name is: org.talend.sap.impl.server.configuration.ApplicationProperties$$SpringCGLIB$$0
-2025-12-23T22:51:42.689+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Replacing bean definition 'applicationProperties' existing class 'org.talend.sap.impl.server.configuration.ApplicationProperties' with enhanced class 'org.talend.sap.impl.server.configuration.ApplicationProperties$$SpringCGLIB$$0'
-2025-12-23T22:51:42.711+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassEnhancer       : Successfully enhanced org.talend.sap.impl.server.configuration.ThreadPoolConfiguration; enhanced class name is: org.talend.sap.impl.server.configuration.ThreadPoolConfiguration$$SpringCGLIB$$0
-2025-12-23T22:51:42.711+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Replacing bean definition 'threadPoolConfiguration' existing class 'org.talend.sap.impl.server.configuration.ThreadPoolConfiguration' with enhanced class 'org.talend.sap.impl.server.configuration.ThreadPoolConfiguration$$SpringCGLIB$$0'
-2025-12-23T22:51:42.720+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassEnhancer       : Successfully enhanced org.talend.sap.impl.server.configuration.named.SAPNamedPropertiesLoader; enhanced class name is: org.talend.sap.impl.server.configuration.named.SAPNamedPropertiesLoader$$SpringCGLIB$$0
-2025-12-23T22:51:42.721+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Replacing bean definition 'SAPNamedPropertiesLoader' existing class 'org.talend.sap.impl.server.configuration.named.SAPNamedPropertiesLoader' with enhanced class 'org.talend.sap.impl.server.configuration.named.SAPNamedPropertiesLoader$$SpringCGLIB$$0'
-2025-12-23T22:51:42.730+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassEnhancer       : Successfully enhanced org.talend.sap.impl.server.configuration.ApplicationConfiguration; enhanced class name is: org.talend.sap.impl.server.configuration.ApplicationConfiguration$$SpringCGLIB$$0
-2025-12-23T22:51:42.730+03:00 TRACE 800562 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Replacing bean definition 'applicationConfiguration' existing class 'org.talend.sap.impl.server.configuration.ApplicationConfiguration' with enhanced class 'org.talend.sap.impl.server.configuration.ApplicationConfiguration$$SpringCGLIB$$0'
-2025-12-23T22:51:43.172+03:00 DEBUG 800562 --- [           main] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: /talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar
-2025-12-23T22:51:43.173+03:00 DEBUG 800562 --- [           main] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: /talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar
-2025-12-23T22:51:43.675+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.durable.queue.replicate:false' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.677+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.durable.queue.retentionPeriod:604800000' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.692+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.bindAddress:tcp://localhost:61616' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.693+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.persistent:false' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.694+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.dataDirectory:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.695+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.ssl.keystore.path:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.727+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.ssl.keystore.password:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.728+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.login.config:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.728+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.login.configDomain:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.729+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.login.configDomain' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.729+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.login.username:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.730+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.login.password:#{null}' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:43.731+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.useJmx:false' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:44.649+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.durable.queue.replicate:false' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:44.650+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'jms.durable.queue.retentionPeriod:604800000' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:44.732+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'feature.idoc.transactional:false' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:44.733+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'feature.idoc.transactionAbortTimeout:60000' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:44.733+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'feature.idoc.transactionAbortTimeout' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:44.755+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'feature.streaming.timeout:30000' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:45.176+03:00  INFO 800562 --- [           main] org.talend.sap.impl.SAPServerBuilder     : Registering server function 'IDOC_INBOUND_ASYNCHRONOUS'
-2025-12-23T22:51:45.179+03:00  INFO 800562 --- [           main] org.talend.sap.impl.SAPServerBuilder     : SAPServer@31228d83 [
-   jco.client.ashost=saphd1ap1.nupco.com
-  ,jco.server.gwhost=saphd1ap1.nupco.com
-  ,jco.server.gwserv=sapgw10
-2025-12-23T22:51:45.343+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'error.path:/error' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:45.343+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'server.error.path:/error' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:45.345+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'error.path:/error' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:45.345+03:00 TRACE 800562 --- [           main] ySourcesPropertyResolver$DefaultResolver : Searching for key 'server.error.path:/error' in PropertySource 'Config resource 'file [conf/tsap-rfc-server.properties]' via location 'file:./conf/tsap-rfc-server.properties''
-2025-12-23T22:51:45.385+03:00 DEBUG 800562 --- [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'org.talend.sap.impl.server'. Automatic @Repository and @Entity scanning is enabled.
-2025-12-23T22:51:45.388+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved module-path location pattern [org/talend/sap/impl/server/**/*.class] to resources []
-2025-12-23T22:51:45.388+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved module-path location pattern [org/talend/sap/impl/server/] to resources []
-2025-12-23T22:51:45.388+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved class path location [org/talend/sap/impl/server/] to resources [URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/]]
-2025-12-23T22:51:45.388+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Looking for matching resources in jar file [nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] .i.s.PathMatchingResourcePatternResolver : Resolved location pattern [classpath*:org/talend/sap/impl/server/**/*.class] to resources [URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestNameUtil.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemMock.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverMock.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestPublisher.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaConsumerFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/BadRequestException.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/ServiceUnavailableException.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/NotFoundException.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/SAPStreamController.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocPublisher.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocNameUtil.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerCondition.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerSslContext.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsQueueReconnect.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnect.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerCondition.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnectTask.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/Holder.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationPropertiesEncryption.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsTopicReconnect.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationProperties.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaProducerConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ThreadPoolConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesLoader.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaCondition.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationConfiguration.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiDSourceIsSupported.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiBwFunctionExists.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverFactoryImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionServiceImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionImpl.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPServerApplication.class], URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPStreamReceiverFactoryImpl.class]]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminFactoryImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminFactoryImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemFactoryImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemFactoryImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestNameUtil.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestNameUtil.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemMock.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWSourceSystemMock.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverMock.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverMock.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestPublisher.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPBWDataRequestPublisher.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaConsumerFactoryImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaConsumerFactoryImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/BadRequestException.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/BadRequestException.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/ServiceUnavailableException.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/ServiceUnavailableException.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/NotFoundException.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/exception/NotFoundException.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/SAPStreamController.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/controller/SAPStreamController.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocPublisher.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocPublisher.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/KafkaAdminImpl.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocNameUtil.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocNameUtil.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerCondition.class]
-2025-12-23T22:51:45.391+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerCondition.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerSslContext.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerSslContext.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsQueueReconnect.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsQueueReconnect.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnect.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnect.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerCondition.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerCondition.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnectTask.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsReconnectTask.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/Holder.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/Holder.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationPropertiesEncryption.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationPropertiesEncryption.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsBrokerConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsTopicReconnect.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsTopicReconnect.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationProperties.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationProperties.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaProducerConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaProducerConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ThreadPoolConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ThreadPoolConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/JmsRemoteBrokerConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesLoader.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/named/SAPNamedPropertiesLoader.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaCondition.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/KafkaCondition.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/configuration/ApplicationConfiguration.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiDSourceIsSupported.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiDSourceIsSupported.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiBwFunctionExists.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/BapiBwFunctionExists.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverFactoryImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPIDocReceiverFactoryImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionServiceImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionServiceImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/named/SAPNamedConnectionImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPServerApplication.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPServerApplication.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Scanning URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPStreamReceiverFactoryImpl.class]
-2025-12-23T22:51:45.392+03:00 TRACE 800562 --- [           main] nModuleEntries$JsonMixinComponentScanner : Ignored because not matching any filter: URL [jar:nested:/talend/RFC_DEV/tsap-rfc-server-8.0.1-R2024-05.jar/!BOOT-INF/classes/!/org/talend/sap/impl/server/SAPStreamReceiverFactoryImpl.class]
-2025-12-23T22:51:45.775+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.SAPServerApplication$$SpringCGLIB$$0
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.SAPBWSourceSystemFactoryImpl
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.SAPBWDataRequestPublisher
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.SAPIDocPublisher
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.configuration.JmsBrokerConfiguration$$SpringCGLIB$$0
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.configuration.ApplicationProperties$$SpringCGLIB$$0
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.configuration.ThreadPoolConfiguration$$SpringCGLIB$$0
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.configuration.named.SAPNamedPropertiesLoader$$SpringCGLIB$$0
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.configuration.ApplicationConfiguration$$SpringCGLIB$$0
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.SAPIDocReceiverFactoryImpl
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.named.SAPNamedConnectionServiceImpl
-2025-12-23T22:51:45.776+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.SAPStreamReceiverFactoryImpl
-2025-12-23T22:51:45.777+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.server.configuration.Holder
-2025-12-23T22:51:45.777+03:00 TRACE 800562 --- [           main] o.s.c.e.EventListenerMethodProcessor     : No @EventListener annotations found on bean class: org.talend.sap.impl.stream.SAPStreamReceiverService
-2025-12-23T22:52:07.908+03:00  INFO 800562 --- [ps-pool-thread2] o.t.sap.impl.server.SAPIDocPublisher     : saphd1ap1: Publishing IDOC package '0A010C302D00694AF2F400FC' with size: 1
+25-12-24 14:49:09.062  INFO 36152 --- [           main] o.d.rfc.server.RFCServerApplication      : Starting RFCServerApplication using Java 11.0.22 on CHQITAW10L47 with PID 36152 (D:\SapRFC\ProjectRFC\target\classes started by asoliman-c in D:\SapRFC\ProjectRFC)
+2025-12-24 14:49:09.064 DEBUG 36152 --- [           main] o.d.rfc.server.RFCServerApplication      : Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-12-24 14:49:09.065  INFO 36152 --- [           main] o.d.rfc.server.RFCServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-24 14:49:10.236  INFO 36152 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-12-24 14:49:10.243  INFO 36152 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-24 14:49:10.244  INFO 36152 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-12-24 14:49:10.348  INFO 36152 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-24 14:49:10.349  INFO 36152 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
+2025-12-24 14:49:10.437  INFO 36152 --- [           main] o.d.r.s.c.SAPEnvironmentInitializer      : Initializing SAP JCo environment
+2025-12-24 14:49:10.520  INFO 36152 --- [           main] o.d.r.s.c.SAPEnvironmentInitializer      : SAP ServerDataProvider registered successfully
+2025-12-24 14:49:10.520  INFO 36152 --- [           main] o.d.r.s.c.SAPEnvironmentInitializer      : SAP ClientDataProvider registered successfully
+2025-12-24 14:49:10.545  INFO 36152 --- [           main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+        acks = -1
+        auto.include.jmx.reporter = true
+        batch.size = 16384
+        bootstrap.servers = [tldqap1.nupco.com:9092]
+        buffer.memory = 33554432
+        client.dns.lookup = use_all_dns_ips
+        client.id = producer-1
+        compression.type = snappy
+        connections.max.idle.ms = 540000
+        delivery.timeout.ms = 120000
+        enable.idempotence = true
+        interceptor.classes = []
+        key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+        linger.ms = 0
+        max.block.ms = 60000
+        max.in.flight.requests.per.connection = 1
+        max.request.size = 1048576
+        metadata.max.age.ms = 300000
+        metadata.max.idle.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partitioner.adaptive.partitioning.enable = true
+        partitioner.availability.timeout.ms = 0
+        partitioner.class = null
+        partitioner.ignore.keys = false
+        receive.buffer.bytes = 32768
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 3
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.connect.timeout.ms = null
+        sasl.login.read.timeout.ms = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.login.retry.backoff.max.ms = 10000
+        sasl.login.retry.backoff.ms = 100
+        sasl.mechanism = GSSAPI
+        sasl.oauthbearer.clock.skew.seconds = 30
+        sasl.oauthbearer.expected.audience = null
+        sasl.oauthbearer.expected.issuer = null
+        sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+        sasl.oauthbearer.jwks.endpoint.url = null
+        sasl.oauthbearer.scope.claim.name = scope
+        sasl.oauthbearer.sub.claim.name = sub
+        sasl.oauthbearer.token.endpoint.url = null
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        socket.connection.setup.timeout.max.ms = 30000
+        socket.connection.setup.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+        ssl.endpoint.identification.algorithm = https
+        ssl.engine.factory.class = null
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.certificate.chain = null
+        ssl.keystore.key = null
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.3
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.certificates = null
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        transaction.timeout.ms = 60000
+        transactional.id = null
+        value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-24 14:49:10.596  INFO 36152 --- [           main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-24 14:49:10.625  INFO 36152 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.0
+2025-12-24 14:49:10.626  INFO 36152 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2e1947d240607d53
+2025-12-24 14:49:10.626  INFO 36152 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1766576950622
+!!!!! UnifiedIDOCReceiver CLASS LOADED !!!!!
+!!!!! UnifiedIDOCReceiver CONSTRUCTOR CALLED !!!!!
+2025-12-24 14:49:10.642 ERROR 36152 --- [           main] o.d.rfc.server.idoc.UnifiedIDOCReceiver  : !!!!! UnifiedIDOCReceiver CONSTRUCTOR CALLED !!!!!
+2025-12-24 14:49:10.644  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : ================================================
+2025-12-24 14:49:10.644  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : SAP RFC Server Configuration:
+2025-12-24 14:49:10.645  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Gateway Host: saphd1ap1.nupco.com
+2025-12-24 14:49:10.645  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Gateway Service: sapgw10
+2025-12-24 14:49:10.645  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Program ID: TALEND
+2025-12-24 14:49:10.646  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Connection Count: 4
+2025-12-24 14:49:10.646  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   SAP Router: Not configured
+2025-12-24 14:49:10.646  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Trace Level: 0
+2025-12-24 14:49:10.646  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : ================================================
+2025-12-24 14:49:10.646  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : Starting SAP RFC Server with Program ID: TALEND
+2025-12-24 14:49:10.647 DEBUG 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Gateway Host: saphd1ap1.nupco.com
+2025-12-24 14:49:10.647 DEBUG 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Gateway Service: sapgw10
+2025-12-24 14:49:10.647 DEBUG 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Connection Count: 4
+2025-12-24 14:49:10.658  INFO 36152 --- [           main] o.d.r.s.config.SAPServerDataProvider     : ServerDataProvider: Providing configuration for server: TALEND
+2025-12-24 14:49:10.658 DEBUG 36152 --- [           main] o.d.r.s.config.SAPServerDataProvider     : Server properties for TALEND: gwhost=saphd1ap1.nupco.com, gwserv=sapgw10, connection_count=4, repository_destination=SAP_CLIENT
+2025-12-24 14:49:10.662  INFO 36152 --- [           main] o.d.r.s.config.SAPClientDataProvider     : DestinationDataProvider: Providing destination properties for: SAP_CLIENT
+2025-12-24 14:49:10.662 DEBUG 36152 --- [           main] o.d.r.s.config.SAPClientDataProvider     : Destination properties for SAP_CLIENT: ashost=saphd1ap1.nupco.com, client=100, sysnr=10
+2025-12-24 14:49:10.801  INFO 36152 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: EU2wZL9yRwCuv9fsIu2wJw
+2025-12-24 14:49:10.809  WARN 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : =================================================================
+2025-12-24 14:49:10.809  WARN 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : IDoc Handler registered - but SAP is sending SYNCHRONOUS calls!
+2025-12-24 14:49:10.809  WARN 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : Your SAP system is NOT using native IDoc protocol.
+2025-12-24 14:49:10.810  WARN 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : Check SAP port configuration - it should use 'tRFC' not 'sRFC'
+2025-12-24 14:49:10.810  WARN 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : Or configure port to send via native IDoc protocol
+2025-12-24 14:49:10.810  WARN 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : =================================================================
+2025-12-24 14:49:10.813  INFO 36152 --- [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 7072035 with epoch 0
+2025-12-24 14:49:10.818  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : ================================================
+2025-12-24 14:49:10.818  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : SAP RFC Server STARTED - Pattern: SAP IDocServerExample
+2025-12-24 14:49:10.833  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Program ID: TALEND
+2025-12-24 14:49:10.834  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      :   Gateway: saphd1ap1.nupco.com:sapgw10
+2025-12-24 14:49:10.834  INFO 36152 --- [           main] o.d.rfc.server.sap.SAPRFCServerImpl      : ================================================
+2025-12-24 14:49:11.130  INFO 36152 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-12-24 14:49:11.229  INFO 36152 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-24 14:49:11.263  INFO 36152 --- [           main] o.d.rfc.server.RFCServerApplication      : Started RFCServerApplication in 2.489 seconds (JVM running for 3.038)
+===================================================================
+!!!!! TIDHandler.checkTID() CALLED - TID: 0A010C30A230694BD3390177
+===================================================================
+2025-12-24 14:49:14.594  INFO 36152 --- [rWorkerThread-4] o.d.rfc.server.sap.IDOCServerTIDHandler  : === TID HANDLER - checkTID INVOKED ===
+2025-12-24 14:49:14.594  INFO 36152 --- [rWorkerThread-4] o.d.rfc.server.sap.IDOCServerTIDHandler  : TID: 0A010C30A230694BD3390177
+2025-12-24 14:49:14.594  INFO 36152 --- [rWorkerThread-4] o.d.rfc.server.sap.IDOCServerTIDHandler  : In checkTID - Server: DefaultJCoIDocServer
+2025-12-24 14:49:14.597  INFO 36152 --- [rWorkerThread-4] o.d.rfc.server.sap.IDOCServerTIDHandler  : RequestQueue in checkTID: com.sap.conn.jco.rt.AbstractServer$DefaultRequestQueue@29c71f56 (type: DefaultRequestQueue)
+2025-12-24 14:49:14.597 DEBUG 36152 --- [rWorkerThread-4] o.d.rfc.server.sap.IDOCServerTIDHandler  : No accept(long) method, trying other methods
+2025-12-24 14:49:14.598  INFO 36152 --- [rWorkerThread-4] o.d.rfc.server.sap.IDOCServerTIDHandler  : Returning FALSE (new TID, process it)
+===================================================================
+!!!!! TIDHandler.confirmTID() CALLED - TID: 0A010C30A230694BD3390177
+===================================================================
+2025-12-24 14:49:14.618  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === TID HANDLER - confirmTID INVOKED ===
+2025-12-24 14:49:14.618  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === EXTRACTING IDOC DATA FROM RFC SERVER CONTEXT ===
+2025-12-24 14:49:14.619  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : TID: 0A010C30A230694BD3390177
+!!!!! Attempting to extract IDOC data from server context
+2025-12-24 14:49:14.621 ERROR 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : !!!!! Attempting to extract IDOC data from server context
+2025-12-24 14:49:14.621  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === Checking JCoServerContext for function data ===
+2025-12-24 14:49:14.622  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : JCoServerContext has 5 fields
+2025-12-24 14:49:14.623  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : >>> FOUND this$0 (worker thread): com.sap.conn.idoc.jco.rt.DefaultJCoIDocServerWorker@675c46f9 (type: com.sap.conn.idoc.jco.rt.DefaultJCoIDocServerWorker)
+2025-12-24 14:49:14.624  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Inspecting class: com.sap.conn.idoc.jco.rt.DefaultJCoIDocServerWorker (depth 0)
+2025-12-24 14:49:14.624  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Class has 1 declared fields
+2025-12-24 14:49:14.625  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: serverWorker
+2025-12-24 14:49:14.625  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       serverWorker = com.sap.conn.idoc.jco.rt.GenericJCoIDocServerWorker@7fd152f3 (type: GenericJCoIDocServerWorker)
+2025-12-24 14:49:14.626  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Inspecting class: com.sap.conn.jco.rt.CPICServerWorker (depth 1)
+2025-12-24 14:49:14.627  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Class has 0 declared fields
+2025-12-24 14:49:14.627  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Inspecting class: com.sap.conn.jco.rt.AbstractServerWorker (depth 2)
+2025-12-24 14:49:14.628  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Class has 15 declared fields
+2025-12-24 14:49:14.628  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: sessionManager
+2025-12-24 14:49:14.629  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       sessionManager = com.sap.conn.jco.rt.DefaultSessionManager@3ad7c043 (type: DefaultSessionManager)
+2025-12-24 14:49:14.629  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: denyTxHandler
+2025-12-24 14:49:14.630  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       denyTxHandler = com.sap.conn.jco.rt.AbstractServerWorker$DenyTxHandler@2e0e2cfa (type: DenyTxHandler)
+2025-12-24 14:49:14.630  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: localWorker
+2025-12-24 14:49:14.632  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       localWorker = java.lang.ThreadLocal@2b60cc4c (type: ThreadLocal)
+2025-12-24 14:49:14.632  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: callbackHandler
+2025-12-24 14:49:14.634  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       callbackHandler = com.sap.conn.jco.rt.AbstractServerWorker$CallbackHandlerImpl@534cd0e (type: CallbackHandlerImpl)
+2025-12-24 14:49:14.634  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: conn
+2025-12-24 14:49:14.635  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       conn = com.sap.conn.jco.rt.CPICServerConnection@281b7348 (type: CPICServerConnection)
+2025-12-24 14:49:14.636  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       >>> FOUND conn - inspecting deeply...
+2025-12-24 14:49:14.636  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :         Inspecting conn class: com.sap.conn.jco.rt.CPICServerConnection (depth 0)
+2025-12-24 14:49:14.637  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Class has 0 fields
+2025-12-24 14:49:14.638  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :         Inspecting conn class: com.sap.conn.jco.rt.AbstractServerConnection (depth 1)
+2025-12-24 14:49:14.641  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Class has 11 fields
+2025-12-24 14:49:14.642  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_TO_BE_CLOSED
+2025-12-24 14:49:14.642  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_TO_BE_CLOSED = 1 (type: Byte)
+2025-12-24 14:49:14.642  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_LISTENING
+2025-12-24 14:49:14.644  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_LISTENING = 8 (type: Byte)
+2025-12-24 14:49:14.644  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_BACKGROUND_TASK
+2025-12-24 14:49:14.644  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_BACKGROUND_TASK = 16 (type: Byte)
+2025-12-24 14:49:14.645  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_BACKGROUND_UNIT
+2025-12-24 14:49:14.645  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_BACKGROUND_UNIT = 32 (type: Byte)
+2025-12-24 14:49:14.646  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_TRANSACTION
+2025-12-24 14:49:14.647  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_TRANSACTION = 48 (type: Byte)
+2025-12-24 14:49:14.647  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: callbackException
+2025-12-24 14:49:14.648  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: server
+2025-12-24 14:49:14.648  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             server = com.sap.conn.idoc.jco.rt.DefaultJCoIDocServer@7c1d4288 (type: DefaultJCoIDocServer)
+2025-12-24 14:49:14.649  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: connectionId
+2025-12-24 14:49:14.649  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             connectionId = 3-R|saphd1ap1.nupco.com|sapgw10|TALEND (type: String)
+2025-12-24 14:49:14.650  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: authenticated
+2025-12-24 14:49:14.651  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             authenticated = false (type: Boolean)
+2025-12-24 14:49:14.651  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: userContext
+2025-12-24 14:49:14.652  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: authorizationData
+2025-12-24 14:49:14.652  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :         Inspecting conn class: com.sap.conn.jco.rt.AbstractConnection (depth 2)
+2025-12-24 14:49:14.656  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Class has 25 fields
+2025-12-24 14:49:14.656  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_CONNECTED
+2025-12-24 14:49:14.657  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_CONNECTED = 2 (type: Byte)
+2025-12-24 14:49:14.657  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: STATE_BUSY
+2025-12-24 14:49:14.658  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             STATE_BUSY = 4 (type: Byte)
+2025-12-24 14:49:14.659  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: IGNORE_PARAMETER
+2025-12-24 14:49:14.659  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             IGNORE_PARAMETER = 14 (type: Integer)
+2025-12-24 14:49:14.660  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: attributes
+2025-12-24 14:49:14.660  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             attributes = DEST:                  TALEND_TL_RFC_DESTINATION
+OWN_HOST:              CHQITAW10L47
+PARTNER_HOST:          saphd1ap1
+PARTNER_IP:            10.1.12.48
+SYSTNR:                10
+SYSID:                 HD1
+CLIENT:                100
+USER:                  ASOLIMAN-C
+LANGUAGE:              E
+ISO_LANGUAGE:          EN
+OWN_CODEPAGE:          4102
+OWN_CHARSET:           UTF16
+OWN_ENCODING:          utf-16
+OWN_BYTES_PER_CHAR:    2
+PARTNER_CODEPAGE:      4103
+PARTNER_CHARSET:       UTF16
+PARTNER_ENCODING:      utf-16
+PARNER_BYTES_PER_CHAR: 2
+OWN_REL:               754
+PARTNER_REL:           754
+PARTNER_TYPE:          3
+KERNEL_REL:            777
+TRACE:
+RFC_ROLE:              S
+OWN_TYPE:              R
+CPIC_CONVID:           08127581
+ (type: ConnectionAttributes)
+2025-12-24 14:49:14.661  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: passport_bytes
+2025-12-24 14:49:14.662  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: rfcHandle
+2025-12-24 14:49:14.662  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             rfcHandle = com.sap.conn.rfc.engine.RfcIoOpenCntl@1225efe6 (type: RfcIoOpenCntl)
+2025-12-24 14:49:14.663  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: state
+2025-12-24 14:49:14.663  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             state = 14 (type: Byte)
+2025-12-24 14:49:14.664  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: last_active_timestamp
+2025-12-24 14:49:14.665  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             last_active_timestamp = 1766576950881 (type: Long)
+2025-12-24 14:49:14.666  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: throughput
+2025-12-24 14:49:14.667  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: jarm_monitor
+2025-12-24 14:49:14.667  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: dsr_monitor
+2025-12-24 14:49:14.668  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: start_time
+2025-12-24 14:49:14.668  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             start_time = 0 (type: Long)
+2025-12-24 14:49:14.669  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: time_handle_request
+2025-12-24 14:49:14.669  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             time_handle_request = 0 (type: Long)
+2025-12-24 14:49:14.670  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: time_total
+2025-12-24 14:49:14.671  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             time_total = 0 (type: Long)
+2025-12-24 14:49:14.671  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: num_sent_bytes
+2025-12-24 14:49:14.672  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             num_sent_bytes = 0 (type: Long)
+2025-12-24 14:49:14.672  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: num_received_bytes
+2025-12-24 14:49:14.673  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             num_received_bytes = 0 (type: Long)
+2025-12-24 14:49:14.674  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: time_middleware
+2025-12-24 14:49:14.675  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             time_middleware = 0 (type: Long)
+2025-12-24 14:49:14.675  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: rfm_name
+2025-12-24 14:49:14.676  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: sessionId
+2025-12-24 14:49:14.677  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: callCounter
+2025-12-24 14:49:14.677  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             callCounter = 0 (type: Integer)
+2025-12-24 14:49:14.678  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: threadId
+2025-12-24 14:49:14.678  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             threadId = 34 (type: Long)
+2025-12-24 14:49:14.679  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: threadName
+2025-12-24 14:49:14.679  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             threadName = JCoServerWorkerThread-2 (type: String)
+2025-12-24 14:49:14.680  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: threadAction
+2025-12-24 14:49:14.681  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: converter
+2025-12-24 14:49:14.682  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             converter = com.sap.conn.jco.rt.Converter@71c9240e (type: Converter)
+2025-12-24 14:49:14.682  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Field: changeAttributes
+2025-12-24 14:49:14.683  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :             changeAttributes = false (type: Boolean)
+2025-12-24 14:49:14.684  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :         Inspecting conn class: java.lang.Object (depth 3)
+2025-12-24 14:49:14.684  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :           Class has 0 fields
+2025-12-24 14:49:14.684  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: server
+2025-12-24 14:49:14.684  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       server = com.sap.conn.idoc.jco.rt.DefaultJCoIDocServer@7c1d4288 (type: DefaultJCoIDocServer)
+2025-12-24 14:49:14.686  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: securityHandler
+2025-12-24 14:49:14.687  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: tidManager
+2025-12-24 14:49:14.688  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       tidManager = org.dataingest.rfc.server.sap.IDOCServerTIDHandler@4c2eaf0e (type: IDOCServerTIDHandler)
+2025-12-24 14:49:14.689  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: unitIDHandler
+2025-12-24 14:49:14.690  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       unitIDHandler = com.sap.conn.jco.rt.AbstractServerWorker$DenyTxHandler@2e0e2cfa (type: DenyTxHandler)
+2025-12-24 14:49:14.691  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: callHandlerFactory
+2025-12-24 14:49:14.691  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       callHandlerFactory = com.sap.conn.idoc.jco.rt.DefaultJCoIDocCallHandlerFactory@14a2f590 (type: DefaultJCoIDocCallHandlerFactory)
+2025-12-24 14:49:14.692  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: ctx
+2025-12-24 14:49:14.693  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       ctx = com.sap.conn.jco.rt.AbstractServerWorker$ServerContext@7f41d33f (type: ServerContext)
+2025-12-24 14:49:14.693  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: callDispatcher
+2025-12-24 14:49:14.693  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       callDispatcher = com.sap.conn.idoc.jco.rt.DefaultJCoIDocServerWorker$IDocDispatcherProxy@4790618d (type: IDocDispatcherProxy)
+2025-12-24 14:49:14.694  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       >>> FOUND Dispatcher - inspecting deeply...
+2025-12-24 14:49:14.695  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :         Dispatcher.dispatcherProxy = com.sap.conn.idoc.jco.rt.GenericJCoIDocServerWorker$IDocDispatcher@7e7fe0ae (type: IDocDispatcher)
+2025-12-24 14:49:14.695  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :         Dispatcher.this$0 = com.sap.conn.idoc.jco.rt.DefaultJCoIDocServerWorker@675c46f9 (type: DefaultJCoIDocServerWorker)
+2025-12-24 14:49:14.696  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: stopping
+2025-12-24 14:49:14.697  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       stopping = false (type: Boolean)
+2025-12-24 14:49:14.698  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: workerThread
+2025-12-24 14:49:14.698  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       workerThread = Thread[JCoServerWorkerThread-2,5,JCoThreads] (type: Thread)
+2025-12-24 14:49:14.699  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field: sessionRefProvider
+2025-12-24 14:49:14.700  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :       sessionRefProvider = com.sap.conn.jco.ext.DefaultSessionReferenceProvider@c5b782e (type: DefaultSessionReferenceProvider)
+2025-12-24 14:49:14.700  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Inspecting class: java.lang.Object (depth 3)
+2025-12-24 14:49:14.701  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Class has 0 declared fields
+2025-12-24 14:49:14.701  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Context field: callType
+2025-12-24 14:49:14.702  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field callType = SYNCHRONOUS (type: JCoServerCallType)
+2025-12-24 14:49:14.703  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Context field: bgRfcCallCtx
+2025-12-24 14:49:14.703  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field bgRfcCallCtx = com.sap.conn.jco.rt.AbstractServerWorker$BgRfcCallContext@4803ec21 (type: BgRfcCallContext)
+2025-12-24 14:49:14.705  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : >>> FOUND bgRfcCallCtx - inspecting deeply...
+2025-12-24 14:49:14.706  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : bgRfcCallCtx has 3 fields
+2025-12-24 14:49:14.708  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   bgRfcCallCtx.unitIdentifier = Q- (type: UnitIdentifier)
+2025-12-24 14:49:14.709  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   bgRfcCallCtx.unitAttributes = null (type: null)
+2025-12-24 14:49:14.709  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   bgRfcCallCtx.queueNames = null (type: null)
+2025-12-24 14:49:14.709  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Context field: tid
+2025-12-24 14:49:14.710  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Context field: queueName
+2025-12-24 14:49:14.710  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Context field: this$0
+2025-12-24 14:49:14.711  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Server Type: com.sap.conn.idoc.jco.rt.DefaultJCoIDocServer
+2025-12-24 14:49:14.711  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Server Package: com.sap.conn.idoc.jco.rt
+2025-12-24 14:49:14.712  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === Available Methods on Server ===
+2025-12-24 14:49:14.713  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Total methods available: 99
+2025-12-24 14:49:14.714  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getIDocHandlerFactory (params: 0, return: JCoIDocHandlerFactory)
+2025-12-24 14:49:14.715  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getIDocRepository (params: 1, return: IDocRepository)
+2025-12-24 14:49:14.716  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getIDocRepository (params: 0, return: IDocRepository)
+2025-12-24 14:49:14.717  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getSystemId (params: 0, return: String)
+2025-12-24 14:49:14.717  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getGroup (params: 0, return: String)
+2025-12-24 14:49:14.718  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getNumServerConnections (params: 0, return: int)
+2025-12-24 14:49:14.718  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getMessageServerHost (params: 0, return: String)
+2025-12-24 14:49:14.719  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getMessageServerService (params: 0, return: String)
+2025-12-24 14:49:14.720  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getGatewayHost (params: 0, return: String)
+2025-12-24 14:49:14.721  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getWebSocketPort (params: 0, return: int)
+2025-12-24 14:49:14.722  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getGatewayService (params: 0, return: String)
+2025-12-24 14:49:14.722  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getSAPRouterString (params: 0, return: String)
+2025-12-24 14:49:14.723  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getSncLibrary (params: 0, return: String)
+2025-12-24 14:49:14.723  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getSncMode (params: 0, return: boolean)
+2025-12-24 14:49:14.724  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getSncQOP (params: 0, return: int)
+2025-12-24 14:49:14.724  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getMonitoredData (params: 1, return: void)
+2025-12-24 14:49:14.724  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getServerType (params: 0, return: char)
+2025-12-24 14:49:14.725  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getUpdateInterval (params: 0, return: String)
+2025-12-24 14:49:14.725  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getProgramID (params: 0, return: String)
+2025-12-24 14:49:14.725  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getMySncName (params: 0, return: String)
+2025-12-24 14:49:14.726  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getProperty (params: 1, return: String)
+2025-12-24 14:49:14.726  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getProperties (params: 0, return: Properties)
+2025-12-24 14:49:14.726  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getState (params: 0, return: JCoServerState)
+2025-12-24 14:49:14.726  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getServerName (params: 0, return: String)
+2025-12-24 14:49:14.727  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getRequestQueue (params: 0, return: ServerRequestQueue)
+2025-12-24 14:49:14.727  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getRepository (params: 0, return: JCoRepository)
+2025-12-24 14:49:14.727  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getRepository (params: 1, return: JCoRepository)
+2025-12-24 14:49:14.728  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getConnectionCount (params: 0, return: int)
+2025-12-24 14:49:14.728  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getRepositoryDestination (params: 0, return: String)
+2025-12-24 14:49:14.728  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getTenantContext (params: 0, return: TenantContext)
+2025-12-24 14:49:14.729  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getTenant (params: 0, return: String)
+2025-12-24 14:49:14.729  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getMonitor (params: 0, return: JCoServerMonitor)
+2025-12-24 14:49:14.730  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getThroughput (params: 0, return: DefaultThroughput)
+2025-12-24 14:49:14.730  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getThroughput (params: 0, return: JCoThroughput)
+2025-12-24 14:49:14.731  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getCallHandlerFactory (params: 0, return: JCoServerCallHandlerFactory)
+2025-12-24 14:49:14.731  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getRepositoryFilename (params: 0, return: String)
+2025-12-24 14:49:14.731  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getServerThreadStarter (params: 0, return: JCoServerThreadStarter)
+2025-12-24 14:49:14.732  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getMaxConnectionCount (params: 0, return: int)
+2025-12-24 14:49:14.732  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getTIDHandler (params: 0, return: JCoServerTIDHandler)
+2025-12-24 14:49:14.733  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getUnitIDHandler (params: 0, return: JCoServerUnitIDHandler)
+2025-12-24 14:49:14.733  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getSecurityHandler (params: 0, return: JCoServerSecurityHandler)
+2025-12-24 14:49:14.733  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getServerKey (params: 0, return: String)
+2025-12-24 14:49:14.734  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getTrace (params: 0, return: boolean)
+2025-12-24 14:49:14.734  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   Method: getClass (params: 0, return: Class)
+2025-12-24 14:49:14.734  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === Attempting to invoke potential IDOC data methods ===
+2025-12-24 14:49:14.735  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : FOUND: getRequestQueue() method - attempting to invoke...
+2025-12-24 14:49:14.735  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : RequestQueue obtained: com.sap.conn.jco.rt.AbstractServer$DefaultRequestQueue@29c71f56 (type: DefaultRequestQueue)
+2025-12-24 14:49:14.735  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : RequestQueue has 14 methods
+2025-12-24 14:49:14.736  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === Available RequestQueue methods ===
+2025-12-24 14:49:14.737  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   getRequest: returns AbstractServerConnection
+2025-12-24 14:49:14.737  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   requestFinished: returns void
+2025-12-24 14:49:14.738  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   getUsedThreadCount: returns int
+2025-12-24 14:49:14.738  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   wait: returns void
+2025-12-24 14:49:14.738  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   toString: returns String
+2025-12-24 14:49:14.739  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   hashCode: returns int
+2025-12-24 14:49:14.739  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   getClass: returns Class
+2025-12-24 14:49:14.740  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   notify: returns void
+2025-12-24 14:49:14.740  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   notifyAll: returns void
+2025-12-24 14:49:14.741  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : >>> Looking for current active connection
+2025-12-24 14:49:14.741  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   RequestQueue field: queue
+2025-12-24 14:49:14.742  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : >>> FOUND 'queue' field - inspecting deeply...
+2025-12-24 14:49:14.742  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     queue = [] (type: java.util.LinkedList)
+2025-12-24 14:49:14.743  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     queue.peek() = null (type: null)
+2025-12-24 14:49:14.743  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   RequestQueue field: maxQueuedRequests
+2025-12-24 14:49:14.744  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :     Field maxQueuedRequests = 1 (type: Integer)
+2025-12-24 14:49:14.744  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   RequestQueue field: maxUsedThreadCount
+2025-12-24 14:49:14.745  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  :   RequestQueue field: usedThreadCount
+2025-12-24 14:49:14.745  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : >>> Connection from fields: null (type: null)
+2025-12-24 14:49:14.745  WARN 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : No IDOC data found through any server methods
+2025-12-24 14:49:14.747  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : === Checking private fields ===
+2025-12-24 14:49:14.747  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : Total fields: 1
+!!!!! confirmTID processing complete for TID: 0A010C30A230694BD3390177
+2025-12-24 14:49:14.748  INFO 36152 --- [rWorkerThread-2] o.d.rfc.server.sap.IDOCServerTIDHandler  : !!!!! confirmTID processing complete for TID: 0A010C30A230694BD3390177

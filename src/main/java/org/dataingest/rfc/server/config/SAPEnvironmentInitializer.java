@@ -21,11 +21,14 @@ public class SAPEnvironmentInitializer {
     @Autowired
     private SAPServerDataProvider serverDataProvider;
 
+    @Autowired
+    private SAPClientDataProvider clientDataProvider;
+
     /**
      * Initializes the SAP JCo environment.
      *
-     * This method runs automatically on application startup. Registers ServerDataProvider
-     * which supplies RFC server configuration with file-based repository.
+     * This method runs automatically on application startup. Registers both
+     * ServerDataProvider and ClientDataProvider with the SAP JCo environment.
      */
     @PostConstruct
     public void initializeSAPEnvironment() {
@@ -36,9 +39,13 @@ public class SAPEnvironmentInitializer {
             Environment.registerServerDataProvider(serverDataProvider);
             LOGGER.info("SAP ServerDataProvider registered successfully");
 
+            // Register the client data provider for IDoc repository access
+            Environment.registerDestinationDataProvider(clientDataProvider);
+            LOGGER.info("SAP ClientDataProvider registered successfully");
+
         } catch (IllegalStateException e) {
             // Provider already registered - this is OK, can happen if multiple instances
-            LOGGER.info("SAP ServerDataProvider already registered: {}", e.getMessage());
+            LOGGER.info("SAP DataProvider already registered: {}", e.getMessage());
         } catch (Exception e) {
             LOGGER.error("Failed to initialize SAP JCo environment: {}", e.getMessage(), e);
             throw new RuntimeException("SAP environment initialization failed", e);
