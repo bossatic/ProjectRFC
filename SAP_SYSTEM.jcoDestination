@@ -1,0 +1,74 @@
+# SAP JCo Client Destination Configuration
+# This is the client connection used by the IDoc server for repository queries
+# Referenced by jco.server.repository_destination in IDOC_SERVER.jcoDestination
+
+#===============================================================================
+# Connection Settings
+#===============================================================================
+
+# Application Server Host (use this OR message server settings, not both)
+jco.client.ashost=your-sap-host
+
+# SAP System Number (00-99)
+jco.client.sysnr=00
+
+# SAP Client (Mandant)
+jco.client.client=100
+
+# Logon User
+jco.client.user=YOUR_USERNAME
+
+# Password
+jco.client.passwd=YOUR_PASSWORD
+
+# Language (EN, DE, etc.)
+jco.client.lang=EN
+
+#===============================================================================
+# Alternative: Load Balancing Configuration
+# Use this instead of ashost/sysnr for load-balanced systems
+#===============================================================================
+
+# Message Server Host
+#jco.client.mshost=your-message-server
+
+# Message Server Service or Port
+#jco.client.msserv=3600
+
+# Logon Group
+#jco.client.group=PUBLIC
+
+# System ID (R3NAME)
+#jco.client.r3name=DEV
+
+#===============================================================================
+# Connection Pool Settings (optional)
+#===============================================================================
+
+# Maximum number of active connections
+#jco.destination.pool_capacity=5
+
+# Maximum number of idle connections
+#jco.destination.peak_limit=10
+
+# Connection timeout in milliseconds
+#jco.destination.expiration_time=60000
+
+# Maximum time to wait for a connection in milliseconds
+#jco.destination.max_get_time=30000
+
+#===============================================================================
+# Advanced Settings (optional)
+#===============================================================================
+
+# SNC (Secure Network Communications) settings
+#jco.client.snc_mode=1
+#jco.client.snc_partnername=p:CN=YourSAPSystem
+#jco.client.snc_qop=3
+#jco.client.snc_myname=p:CN=YourClient
+
+# Trace settings (0 = off, 1-10 = increasing detail)
+#jco.client.trace=0
+
+# CPIC trace (-1 = off, 0-3 = increasing detail)
+#jco.client.cpic_trace=-1

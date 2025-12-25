@@ -1,0 +1,61 @@
+# SAP JCo Server Configuration for IDoc Capture
+# This file configures the connection to SAP Gateway for receiving IDocs
+#
+# Place this file in the same directory as the running Java application
+# File name MUST match the SERVER_NAME in SimpleIDocCapture.java
+
+#===============================================================================
+# SAP Gateway Connection Settings
+#===============================================================================
+
+# SAP Gateway host (required)
+# This is the hostname or IP address of the SAP Gateway
+jco.server.gwhost=localhost
+
+# SAP Gateway service (required)
+# This is typically sapgw## where ## is the SAP instance number (e.g., sapgw00)
+jco.server.gwserv=sapgw00
+
+# Program ID (required)
+# This must match the Program ID registered in SAP (transaction SM59/SMGW)
+# SAP will use this to identify and send IDocs to this program
+jco.server.progid=JAVA_IDOC_CAPTURE
+
+# Repository destination (required)
+# The name of a client destination to be used for repository queries
+# This should be configured in a corresponding .jcoDestination file
+jco.server.repository_destination=SAP_SYSTEM
+
+# Number of server connections (optional, default: 2)
+# How many parallel connections to the gateway
+jco.server.connection_count=2
+
+#===============================================================================
+# Optional Settings
+#===============================================================================
+
+# Maximum time (in seconds) that the server waits for the gateway to start (optional)
+jco.server.max_startup_delay=0
+
+# Trace level (optional)
+# 0 = no trace, 1-10 = increasing trace levels
+#jco.server.trace=0
+
+# CPIC trace level (optional)
+# -1 = off, 0 = minimum, 1-3 = increasing trace levels
+#jco.server.cpic_trace=-1
+
+#===============================================================================
+# Notes:
+#===============================================================================
+# 1. You also need a client destination file (e.g., SAP_SYSTEM.jcoDestination)
+#    for the repository connection
+#
+# 2. The Program ID must be registered in SAP:
+#    - Transaction SM59: Create RFC Destination Type T (TCP/IP)
+#    - Or transaction SMGW: Register the Program ID
+#
+# 3. SAP sends IDocs to this program based on:
+#    - Partner profile configuration (WE21)
+#    - IDoc type and message type settings
+#    - The Program ID specified here
