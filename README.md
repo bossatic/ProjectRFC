@@ -298,7 +298,7 @@ Successful startup output:
 
 ```
 [IDocCapture] Configuration loaded from: idoc_capture.properties
-[IDocCapture] Scanning documentation directory: D:\RFC_SERVER\IDocs\documentation
+[IDocCapture] Scanning documentation directory: \IDocs\documentation
 [IDocCapture] Found 2 files in documentation directory
 [IDocCapture]   Loaded documentation for type: ORDERS05 (ORDERS05.txt)
 [IDocCapture]   Loaded documentation for type: INVOIC01 (INVOIC01.txt)
@@ -307,7 +307,7 @@ Successful startup output:
 [IDocCapture] Documentation watcher started (reload interval: 600s)
 [JCo] Environment initialized successfully
 [IDocCapture] Starting IDoc capture server: IDOC_SERVER
-[IDocCapture] Output directory: D:\RFC_SERVER\IDocs\captured
+[IDocCapture] Output directory: \IDocs\captured
 [IDocCapture] Listening for IDocs...
 ```
 
@@ -359,7 +359,7 @@ ProjectRFC\
 
 1. **In SAP, go to Transaction WE60**
 2. **Search for your IDoc type**
-   - Example: ORDERS05, INVOIC01, ZPO_IDOC_TO_HOS
+   - Example: ORDERS05, INVOIC01
 3. **Click "Display IDoc Documentation"**
 4. **Select Format**: Choose appropriate format
 5. **Download**: Save to file with naming convention:
