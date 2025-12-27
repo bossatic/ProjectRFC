@@ -1,0 +1,26 @@
+# JAR files
+*.jar
+
+# Maven
+target/
+*.class
+.classpath
+.project
+.settings/
+*.iml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.gitignore.bak
+
+# Build output
+lib/
+*.log
