@@ -36,7 +36,7 @@ public class SimpleIDocCaptureWithConfig {
 
     private IDocCaptureConfig config;
     private IDocXMLProcessor xmlProcessor;
-    private IDocDocumentationManager docManager;
+    // private IDocDocumentationManager docManager;
     private KafkaProducerService kafkaProducer;
     private SimpleDateFormat dateFormat;
     private int idocCount = 0;
@@ -44,7 +44,7 @@ public class SimpleIDocCaptureWithConfig {
     public SimpleIDocCaptureWithConfig(String configFile) throws IOException {
         this.config = new IDocCaptureConfig(configFile);
         this.xmlProcessor = JCoIDoc.getIDocFactory().getIDocXMLProcessor();
-        this.docManager = new IDocDocumentationManager(config);
+        // this.docManager = new IDocDocumentationManager(config);
         this.kafkaProducer = new KafkaProducerService(config);
         this.dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
     }
@@ -110,8 +110,8 @@ public class SimpleIDocCaptureWithConfig {
                 // Extract document number for Kafka key
                 String docNum = extractDocumentNumber(xmlFilePath);
 
-                // Check if documentation exists and JSON conversion is enabled
-                if (config.isJsonConversionEnabled() && idocType != null && docManager.hasDocumentation(idocType)) {
+                // Convert to JSON if enabled
+                if (config.isJsonConversionEnabled()) {
                     try {
                         String jsonFilename = filename.replace(".xml", ".json");
                         String jsonFilePath = config.getJsonOutputDirectory() + File.separator + jsonFilename;
@@ -123,11 +123,7 @@ public class SimpleIDocCaptureWithConfig {
                         config.log("IDoc captured: " + filename + " [Type: " + idocType + "] (Total: " + (idocCount + 1) + ")");
                     }
                 } else {
-                    if (idocType != null && !docManager.hasDocumentation(idocType)) {
-                        config.log("IDoc captured: " + filename + " [Type: " + idocType + " - no documentation] (Total: " + (idocCount + 1) + ")");
-                    } else {
-                        config.log("IDoc captured: " + filename + " (Total: " + (idocCount + 1) + ")");
-                    }
+                    config.log("IDoc captured: " + filename + " [Type: " + idocType + "] (Total: " + (idocCount + 1) + ")");
                 }
 
                 idocCount++;
