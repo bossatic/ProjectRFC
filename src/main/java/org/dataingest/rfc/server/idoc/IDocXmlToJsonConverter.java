@@ -173,8 +173,8 @@ public class IDocXmlToJsonConverter {
                 // Get only direct text content (leaf value), not nested content
                 String fieldValue = getDirectTextContent(child).trim();
 
-                // Skip empty fields and fields with excessive whitespace
-                if (!fieldValue.isEmpty() && !fieldValue.contains("\n") && !fieldValue.contains("\t")) {
+                // Skip only empty fields - preserve all data including line breaks
+                if (!fieldValue.isEmpty()) {
                     fields.put(fieldName, fieldValue);
                 }
             }

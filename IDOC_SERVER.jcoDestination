@@ -10,7 +10,7 @@
 
 # SAP Gateway host (required)
 # This is the hostname or IP address of the SAP Gateway
-jco.server.gwhost=localhost
+jco.server.gwhost=saphd1ap1.nupco.com
 
 # SAP Gateway service (required)
 # This is typically sapgw## where ## is the SAP instance number (e.g., sapgw00)
@@ -19,7 +19,7 @@ jco.server.gwserv=sapgw10
 # Program ID (required)
 # This must match the Program ID registered in SAP (transaction SM59/SMGW)
 # SAP will use this to identify and send IDocs to this program
-jco.server.progid=RFC_SERVER
+jco.server.progid=TALEND
 
 # Repository destination (required)
 # The name of a client destination to be used for repository queries
