@@ -16,10 +16,10 @@ jco.client.sysnr=10
 jco.client.client=100
 
 # Logon User
-jco.client.user=RFCTLDHD1100
+jco.client.user=RFCUSER
 
 # Password
-jco.client.passwd=Talend2020
+jco.client.passwd=pw123456
 
 # Language (EN, DE, etc.)
 jco.client.lang=EN
