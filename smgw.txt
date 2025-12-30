@@ -1,0 +1,67 @@
+
+
+Tue Dec 30 08:31:46:754 2025
+***LOG Q0I=> NiIRead: P=10.116.22.70:51844; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 282/sock 45
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51844; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51851; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 313/sock 52
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51851; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51847; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 123/sock 48
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51847; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51848; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 256/sock 49
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51848; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51841; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 275/sock 28
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51841; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51852; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 321/sock 53
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51852; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51843; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 117/sock 40
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51843; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51854; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 337/sock 55
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51854; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51849; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 144/sock 50
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51849; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51846; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 133/sock 47
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51846; L=10.1.12.48:3310) [nixxi.cpp    5474]
+
+Tue Dec 30 08:31:46:758 2025
+***LOG Q0I=> NiIRead: P=10.116.22.70:51840; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 298/sock 27
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51840; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51845; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 265/sock 46
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51845; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51853; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 329/sock 54
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51853; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:51850; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 306/sock 51
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:51850; L=10.1.12.48:3310) [nixxi.cpp    5474]
+***LOG Q0I=> NiIRead: P=10.116.22.70:49685; L=10.1.12.48:3310: recv (104: Connection reset by peer) [/bas/777_REL/src/base/ni/nixxi.cpp 5474]
+*** ERROR => NiIRead: SiRecv failed for hdl 92/sock 25
+    (SI_ECONN_BROKEN/104; I4; ST; P=10.116.22.70:49685; L=10.1.12.48:3310) [nixxi.cpp    5474]
+
+Tue Dec 30 08:45:36:552 2025
+*** ERROR => DpSesGetWorkerType: invalid T48 [dpSession.c  2771]
+*** WARNING => DpRqGetRequestQueueOfRequest: bad receiver session info: state of T48 is DP_LOGON_STATE_LOGGED_OFF [dpxxrq.c     2525]
+*** ERROR => DpRqPutIntoQueue: No appropriate queue found [dpxxrq.c     2393]
+rq_id 95494400
+-OUT- ca_blk    320          len       80
+-OUT- reqHdlId  REQ_HANDLER_RFC
+-OUT- sender address:
+-OUT- type      LOCAL
+-OUT- agentType GATEWAY
+-OUT- receiver address:
+-OUT- type      LOCAL
+-OUT- agentType WORKER       workerTyp NOWP
+-OUT- session   invalid T48_U14162_M0
+*** ERROR => GwRqDpSendTo: DpRqSendRequest failed [gwdp.c       4462]
+*** ERROR => GwRqServiceQueue: GwHdlRqFromSapWp failed, rc=-3 [gwdp.c       6394]

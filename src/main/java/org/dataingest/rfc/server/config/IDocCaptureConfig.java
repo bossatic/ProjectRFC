@@ -31,6 +31,31 @@ public class IDocCaptureConfig {
     private int kafkaBatchSize;
     private int kafkaLingerMs;
 
+    // Monitoring configuration
+    private boolean monitoringEnabled;
+    private boolean monitoringDashboardEnabled;
+    private int monitoringDashboardPort;
+    private String monitoringDashboardHost;
+    private boolean monitoringKafkaEnabled;
+    private String monitoringKafkaTopic;
+    private String monitoringEventDetail;
+
+    // H2 Database configuration
+    private boolean h2Enabled;
+    private String h2DatabasePath;
+    private int h2PoolSize;
+    private int h2RetentionDays;
+    private int h2BatchSize;
+    private int h2BatchIntervalSeconds;
+    private boolean h2ConsoleEnabled;
+    private int h2ConsolePort;
+    private boolean h2AggregationEnabled;
+
+    // File retention configuration
+    private boolean fileRetentionEnabled;
+    private int fileRetentionDays;
+    private int fileRetentionCheckIntervalHours;
+
     /**
      * Load configuration from default properties file
      */
@@ -81,6 +106,31 @@ public class IDocCaptureConfig {
         kafkaRetries = Integer.parseInt(properties.getProperty("kafka.retries", "3"));
         kafkaBatchSize = Integer.parseInt(properties.getProperty("kafka.batch.size", "16384"));
         kafkaLingerMs = Integer.parseInt(properties.getProperty("kafka.linger.ms", "10"));
+
+        // Monitoring configuration
+        monitoringEnabled = Boolean.parseBoolean(properties.getProperty("monitoring.enabled", "false"));
+        monitoringDashboardEnabled = Boolean.parseBoolean(properties.getProperty("monitoring.dashboard.enabled", "true"));
+        monitoringDashboardPort = Integer.parseInt(properties.getProperty("monitoring.dashboard.port", "8080"));
+        monitoringDashboardHost = properties.getProperty("monitoring.dashboard.host", "localhost");
+        monitoringKafkaEnabled = Boolean.parseBoolean(properties.getProperty("monitoring.kafka.enabled", "true"));
+        monitoringKafkaTopic = properties.getProperty("monitoring.kafka.topic", "idoc_monitoring_events");
+        monitoringEventDetail = properties.getProperty("monitoring.event.detail", "DETAILED");
+
+        // H2 Database configuration
+        h2Enabled = Boolean.parseBoolean(properties.getProperty("h2.enabled", "true"));
+        h2DatabasePath = properties.getProperty("h2.database.path", "./data/idoc_monitoring");
+        h2PoolSize = Integer.parseInt(properties.getProperty("h2.pool.size", "10"));
+        h2RetentionDays = Integer.parseInt(properties.getProperty("h2.retention.days", "7"));
+        h2BatchSize = Integer.parseInt(properties.getProperty("h2.batch.size", "100"));
+        h2BatchIntervalSeconds = Integer.parseInt(properties.getProperty("h2.batch.interval.seconds", "5"));
+        h2ConsoleEnabled = Boolean.parseBoolean(properties.getProperty("h2.console.enabled", "false"));
+        h2ConsolePort = Integer.parseInt(properties.getProperty("h2.console.port", "8082"));
+        h2AggregationEnabled = Boolean.parseBoolean(properties.getProperty("h2.aggregation.enabled", "true"));
+
+        // File retention configuration
+        fileRetentionEnabled = Boolean.parseBoolean(properties.getProperty("file.retention.enabled", "false"));
+        fileRetentionDays = Integer.parseInt(properties.getProperty("file.retention.days", "7"));
+        fileRetentionCheckIntervalHours = Integer.parseInt(properties.getProperty("file.retention.check.interval.hours", "24"));
 
         // Normalize path separators
         outputDirectory = normalizePath(outputDirectory);
@@ -166,6 +216,85 @@ public class IDocCaptureConfig {
 
     public int getKafkaLingerMs() {
         return kafkaLingerMs;
+    }
+
+    // Monitoring getters
+    public boolean isMonitoringEnabled() {
+        return monitoringEnabled;
+    }
+
+    public boolean isMonitoringDashboardEnabled() {
+        return monitoringDashboardEnabled;
+    }
+
+    public int getMonitoringDashboardPort() {
+        return monitoringDashboardPort;
+    }
+
+    public String getMonitoringDashboardHost() {
+        return monitoringDashboardHost;
+    }
+
+    public boolean isMonitoringKafkaEnabled() {
+        return monitoringKafkaEnabled;
+    }
+
+    public String getMonitoringKafkaTopic() {
+        return monitoringKafkaTopic;
+    }
+
+    public String getMonitoringEventDetail() {
+        return monitoringEventDetail;
+    }
+
+    // H2 Database getters
+    public boolean isH2Enabled() {
+        return h2Enabled;
+    }
+
+    public String getH2DatabasePath() {
+        return h2DatabasePath;
+    }
+
+    public int getH2PoolSize() {
+        return h2PoolSize;
+    }
+
+    public int getH2RetentionDays() {
+        return h2RetentionDays;
+    }
+
+    public int getH2BatchSize() {
+        return h2BatchSize;
+    }
+
+    public int getH2BatchIntervalSeconds() {
+        return h2BatchIntervalSeconds;
+    }
+
+    public boolean isH2ConsoleEnabled() {
+        return h2ConsoleEnabled;
+    }
+
+    public int getH2ConsolePort() {
+        return h2ConsolePort;
+    }
+
+    public boolean isH2AggregationEnabled() {
+        return h2AggregationEnabled;
+    }
+
+    // File retention getters
+    public boolean isFileRetentionEnabled() {
+        return fileRetentionEnabled;
+    }
+
+    public int getFileRetentionDays() {
+        return fileRetentionDays;
+    }
+
+    public int getFileRetentionCheckIntervalHours() {
+        return fileRetentionCheckIntervalHours;
     }
 
     public void log(String message) {

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<SYIDOC01>
+  <IDOC BEGIN="1">
+    <EDI_DC40 SEGMENT="1">
+      <TABNAM>EDI_DC40</TABNAM>
+      <MANDT>000</MANDT>
+      <DOCNUM>0000000047110815</DOCNUM>
+      <DOCREL>710</DOCREL>
+      <STATUS>30</STATUS>
+      <DIRECT>1</DIRECT>
+      <OUTMOD>2</OUTMOD>
+      <EXPRSS/>
+      <TEST/>
+      <IDOCTYP>SYIDOC01</IDOCTYP>
+      <CIMTYP/>
+      <MESTYP>SYIDOC</MESTYP>
+      <MESCOD/>
+      <MESFCT/>
+      <STD/>
+      <STDVRS/>
+      <STDMES>SYIDOC</STDMES>
+      <SNDPOR>SAPBCE</SNDPOR>
+      <SNDPRT>LS</SNDPRT>
+      <SNDPFC/>
+      <SNDPRN>BCECLNT000</SNDPRN>
+      <SNDSAD/>
+      <SNDLAD/>
+      <RCVPOR>SBC47</RCVPOR>
+      <RCVPRT>LS</RCVPRT>
+      <RCVPFC/>
+      <RCVPRN>SBC47</RCVPRN>
+      <RCVSAD/>
+      <RCVLAD/>
+      <CREDAT>20061201</CREDAT>
+      <CRETIM>150020</CRETIM>
+      <REFINT/>
+      <REFGRP/>
+      <REFMES/>
+      <ARCKEY/>
+      <SERIAL/>
+    </EDI_DC40>
+    <E1IDOCH SEGMENT="1">
+      <LANGUA>D</LANGUA>
+      <SELREL>710</SELREL>
+      <LANGUA_ISO>DE</LANGUA_ISO>
+      <E1IDOCT SEGMENT="1">
+        <DOCTYP>TXTRAW01</DOCTYP>
+        <STRUCTTYPE>B</STRUCTTYPE>
+        <DESCRP>Übertragung von Freitexten im SAPoffice-Format "RAW"</DESCRP>
+        <BASIDOCTYP>TXTRAW01</BASIDOCTYP>
+        <RELEASED>30A</RELEASED>
+        <E1SEGMH SEGMENT="1">
+          <SEGMENTTYP>E1TXTRW</SEGMENTTYP>
+          <SEGMENTDEF>E2TXTRW</SEGMENTDEF>
+          <SEGLEN>0072</SEGLEN>
+          <PARPNO>0000</PARPNO>
+          <MUSTFL>X</MUSTFL>
+          <OCCMIN>0000000001</OCCMIN>
+          <OCCMAX>0000003600</OCCMAX>
+          <HLEVEL>02</HLEVEL>
+          <DESCRP>Textzeile für SAPmail (72 Spalten)</DESCRP>
+          <GRP_OCCMIN>0000000000</GRP_OCCMIN>
+          <GRP_OCCMAX>0000000000</GRP_OCCMAX>
+          <E1TXTH2 SEGMENT="1">
+            <TDOBNAME>E1TXTRW</TDOBNAME>
+            <TDID>TB</TDID>
+            <TDSPRAS>D</TDSPRAS>
+            <LANGUA_ISO>DE</LANGUA_ISO>
+            <E1TXTP2 SEGMENT="1">
+              <TDFORMAT>U1</TDFORMAT>
+              <TDLINE>Verwendung</TDLINE>
+            </E1TXTP2>
+            <E1TXTP2 SEGMENT="1">
+              <TDFORMAT>AS</TDFORMAT>
+              <TDLINE>Gnarls Barkley - Crazy; FC Bayern München</TDLINE>
+            </E1TXTP2>
+          </E1TXTH2>
+          <E1SEGMF SEGMENT="1">
+            <FIELDNAME>TLINE</FIELDNAME>
+            <INTLEN>000072</INTLEN>
+            <EXTLEN>000072</EXTLEN>
+            <FIELD_POS>000001</FIELD_POS>
+            <BYTE_FIRST>000064</BYTE_FIRST>
+            <BYTE_LAST>000135</BYTE_LAST>
+            <ROLLNAME>EDI_TLINE</ROLLNAME>
+            <DOMNAME>TEXT72</DOMNAME>
+            <DATATYPE>CHAR</DATATYPE>
+            <DESCRP>Textzeile für SAPmail über IDoc-Schnittstelle</DESCRP>
+            <E1TXTH3 SEGMENT="1">
+              <TDOBNAME>EDI_TLINE</TDOBNAME>
+              <TDID>DE</TDID>
+              <TDSPRAS>D</TDSPRAS>
+              <LANGUA_ISO>DE</LANGUA_ISO>
+              <E1TXTP3 SEGMENT="1">
+                 <TDFORMAT>U1</TDFORMAT>
+                 <TDLINE>Allgemein</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Das Feld nimmt eine Textzeile des SAPoffice-Dokumenttyps 'RAW' auf.</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>U1</TDFORMAT>
+                <TDLINE>Anwendungen: Sugababes - Push The Button</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Keine Aktion erforderlich.</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>U1</TDFORMAT>
+                <TDLINE>IDoc-Schnittstelle</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Keine Aktion erforderlich.</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>U1</TDFORMAT>
+                <TDLINE>EDI-Subsystem: '54, '74, '90, 2006 - Sportfreunde Stiller äöÄÖé</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Eingangsverarbeitung von IDocs: Das EDI-Subsystem füllt Texte mit einer</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDLINE>maximalen Zeilenbreite von 72 Zeichen in das Feld. Jeder Datensatz</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDLINE>stellt damit eine Zeile des zu übertragenden Textes dar.</TDLINE>
+              </E1TXTP3>
+            </E1TXTH3>
+          </E1SEGMF>
+        </E1SEGMH>
+        <E1MESH SEGMENT="1">
+          <MESTYP>/BSHM/AP_COND_A</MESTYP>
+          <RELEASED>620</RELEASED>
+        </E1MESH>
+        <E1MESH SEGMENT="1">
+          <MESTYP>TXTRAW</MESTYP>
+          <DESCRP>Nachricht für Freitext im SAPoffice-Format 'RAW'</DESCRP>
+          <RELEASED>30A</RELEASED>
+        </E1MESH>
+        <E1MESH SEGMENT="1">
+          <MESTYP>ZTEST_TXTRAW_ZZZZZZZZZZQQQQQQQ</MESTYP>
+          <RELEASED>46A</RELEASED>
+        </E1MESH>
+      </E1IDOCT>
+    </E1IDOCH>
+  </IDOC>
+  <IDOC BEGIN="1">
+    <EDI_DC40 SEGMENT="1">
+      <TABNAM>EDI_DC40</TABNAM>
+      <MANDT>000</MANDT>
+      <DOCNUM>0000000047110816</DOCNUM>
+      <DOCREL>710</DOCREL>
+      <STATUS>30</STATUS>
+      <DIRECT>1</DIRECT>
+      <OUTMOD>2</OUTMOD>
+      <EXPRSS/>
+      <TEST/>
+      <IDOCTYP>SYIDOC01</IDOCTYP>
+      <CIMTYP/>
+      <MESTYP>SYIDOC</MESTYP>
+      <MESCOD/>
+      <MESFCT/>
+      <STD/>
+      <STDVRS/>
+      <STDMES>SYIDOC</STDMES>
+      <SNDPOR>SAPBCE</SNDPOR>
+      <SNDPRT>LS</SNDPRT>
+      <SNDPFC/>
+      <SNDPRN>BCECLNT000</SNDPRN>
+      <SNDSAD/>
+      <SNDLAD/>
+      <RCVPOR>SBC47</RCVPOR>
+      <RCVPRT>LS</RCVPRT>
+      <RCVPFC/>
+      <RCVPRN>SBC47</RCVPRN>
+      <RCVSAD/>
+      <RCVLAD/>
+      <CREDAT>20061201</CREDAT>
+      <CRETIM>155020</CRETIM>
+      <REFINT/>
+      <REFGRP/>
+      <REFMES/>
+      <ARCKEY/>
+      <SERIAL/>
+    </EDI_DC40>
+    <E1IDOCH SEGMENT="1">
+      <LANGUA>D</LANGUA>
+      <SELREL>710</SELREL>
+      <LANGUA_ISO>DE</LANGUA_ISO>
+      <E1IDOCT SEGMENT="1">
+        <DOCTYP>TXTRAW01</DOCTYP>
+        <STRUCTTYPE>B</STRUCTTYPE>
+        <DESCRP>Übertragung von Freitexten im SAPoffice-Format "RAW"</DESCRP>
+        <BASIDOCTYP>TXTRAW01</BASIDOCTYP>
+        <RELEASED>30A</RELEASED>
+        <E1SEGMH SEGMENT="1">
+          <SEGMENTTYP>E1TXTRW</SEGMENTTYP>
+          <SEGMENTDEF>E2TXTRW</SEGMENTDEF>
+          <SEGLEN>0072</SEGLEN>
+          <PARPNO>0000</PARPNO>
+          <MUSTFL>X</MUSTFL>
+          <OCCMIN>0000000001</OCCMIN>
+          <OCCMAX>0000003600</OCCMAX>
+          <HLEVEL>02</HLEVEL>
+          <DESCRP>Textzeile für SAPmail (72 Spalten)</DESCRP>
+          <GRP_OCCMIN>0000000000</GRP_OCCMIN>
+          <GRP_OCCMAX>0000000000</GRP_OCCMAX>
+          <E1TXTH2 SEGMENT="1">
+            <TDOBNAME>E1TXTRW</TDOBNAME>
+            <TDID>TB</TDID>
+            <TDSPRAS>D</TDSPRAS>
+            <LANGUA_ISO>DE</LANGUA_ISO>
+            <E1TXTP2 SEGMENT="1">
+              <TDFORMAT>U1</TDFORMAT>
+              <TDLINE>Verwendung</TDLINE>
+            </E1TXTP2>
+            <E1TXTP2 SEGMENT="1">
+              <TDFORMAT>AS</TDFORMAT>
+              <TDLINE>Texas Lightning - No No Never; Pfohlbacher SV</TDLINE>
+            </E1TXTP2>
+          </E1TXTH2>
+          <E1SEGMF SEGMENT="1">
+            <FIELDNAME>TLINE</FIELDNAME>
+            <INTLEN>000072</INTLEN>
+            <EXTLEN>000072</EXTLEN>
+            <FIELD_POS>000001</FIELD_POS>
+            <BYTE_FIRST>000064</BYTE_FIRST>
+            <BYTE_LAST>000135</BYTE_LAST>
+            <ROLLNAME>EDI_TLINE</ROLLNAME>
+            <DOMNAME>TEXT72</DOMNAME>
+            <DATATYPE>CHAR</DATATYPE>
+            <DESCRP>Textzeile für SAPmail über IDoc-Schnittstelle</DESCRP>
+            <E1TXTH3 SEGMENT="1">
+              <TDOBNAME>EDI_TLINE</TDOBNAME>
+              <TDID>DE</TDID>
+              <TDSPRAS>D</TDSPRAS>
+              <LANGUA_ISO>DE</LANGUA_ISO>
+              <E1TXTP3 SEGMENT="1">
+                 <TDFORMAT>U1</TDFORMAT>
+                 <TDLINE>Allgemein</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Das Feld nimmt eine Textzeile des SAPoffice-Dokumenttyps 'RAW' auf.</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>U1</TDFORMAT>
+                <TDLINE>Anwendungen: Sandi Thom - I Wish I Was A Punk Rocker</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Keine Aktion erforderlich.</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>U1</TDFORMAT>
+                <TDLINE>IDoc-Schnittstelle</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Keine Aktion erforderlich.</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>U1</TDFORMAT>
+                <TDLINE>EDI-Subsystem: Das Beste - Silbermond: É Â â å Å ç ñ</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDFORMAT>AS</TDFORMAT>
+                <TDLINE>Eingangsverarbeitung von IDocs: Das EDI-Subsystem füllt Texte mit einer</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDLINE>maximalen Zeilenbreite von 72 Zeichen in das Feld. Jeder Datensatz</TDLINE>
+              </E1TXTP3>
+              <E1TXTP3 SEGMENT="1">
+                <TDLINE>stellt damit eine Zeile des zu übertragenden Textes dar.</TDLINE>
+              </E1TXTP3>
+            </E1TXTH3>
+          </E1SEGMF>
+        </E1SEGMH>
+        <E1MESH SEGMENT="1">
+          <MESTYP>/BSHM/AP_COND_A</MESTYP>
+          <RELEASED>620</RELEASED>
+        </E1MESH>
+        <E1MESH SEGMENT="1">
+          <MESTYP>TXTRAW</MESTYP>
+          <DESCRP>Nachricht für Freitext im SAPoffice-Format 'RAW'</DESCRP>
+          <RELEASED>30A</RELEASED>
+        </E1MESH>
+        <E1MESH SEGMENT="1">
+          <MESTYP>ZTEST_TXTRAW_ZZZZZZZZZZUUUUUUU</MESTYP>
+          <RELEASED>46A</RELEASED>
+        </E1MESH>
+      </E1IDOCT>
+    </E1IDOCH>
+  </IDOC>
+</SYIDOC01>
+   		

@@ -10,7 +10,7 @@
 
 # SAP Gateway host (required)
 # This is the hostname or IP address of the SAP Gateway
-jco.server.gwhost=saphd1ap1.company.com
+jco.server.gwhost=saphd1ap1.nupco.com
 
 # SAP Gateway service (required)
 # This is typically sapgw## where ## is the SAP instance number (e.g., sapgw00)
@@ -19,7 +19,7 @@ jco.server.gwserv=sapgw10
 # Program ID (required)
 # This must match the Program ID registered in SAP (transaction SM59/SMGW)
 # SAP will use this to identify and send IDocs to this program
-jco.server.progid=RFC_PROG
+jco.server.progid=TALEND
 
 # Repository destination (required)
 # The name of a client destination to be used for repository queries
@@ -28,7 +28,8 @@ jco.server.repository_destination=SAP_SYSTEM
 
 # Number of server connections (optional, default: 2)
 # How many parallel connections to the gateway
-jco.server.connection_count=2
+# Increased to handle parallel IDoc sends from SAP (25+ parallel sends)
+jco.server.connection_count=15
 
 #===============================================================================
 # Optional Settings
